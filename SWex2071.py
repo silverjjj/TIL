@@ -10,8 +10,8 @@ for j in range(a):
         list_n[j] = list(map(int, list_n[j]))
         sum = 0
         for num in list_n[j]:
-            if num % 2 == 1:
-                sum += num
-        print(sum)
+            sum += num
+            avg = sum/len(list_n[j])
+        print(round(avg))
     else:
         0
