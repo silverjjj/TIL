@@ -1,4 +1,3 @@
-T = int(input())
 
 for test_case in range(1,T+1):
     P, Q, R, S, W = map(int,input().split(' '))
@@ -13,5 +12,6 @@ for test_case in range(1,T+1):
             result += P*W
         elif (Q +(W-R)*S) < P*W:
             result += Q +(W-R)*S
+
 
     print(f'#{test_case}',result)
