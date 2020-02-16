@@ -1,22 +1,15 @@
-
 N = int(input())
-nums = [0 for _ in range(N)]
-for i in range(N):
-    nums[i] = list(map(int,input().split()))
-result = [0 for _ in range(N)]
-for i in range(N):
-    print(nums[0:][-1-i+N])
-    #nums[i][0:] = result[0:][i+N-1]
-print(nums)
-print(result)
+maps = []
+for n in range(N):
+    maps.append(list(map(int, input().split())))
 
-
-
-
-
-
-
-
+newarr = [[0 for _ in range(N)] for _ in range(N)]
+for i in range(len(maps)):
+    for j in range(len(map[i])):
+        newarr[j][N-i-1] = maps[i][j]
+for row in newarr:
+    print(row)
+maps = newarr
 
 # def arrspin(my_list):
 #     my_reverse = []
