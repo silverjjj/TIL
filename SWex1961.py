@@ -1,15 +1,17 @@
-N = int(input())
-maps = []
-for n in range(N):
-    maps.append(list(map(int, input().split())))
 
-newarr = [[0 for _ in range(N)] for _ in range(N)]
-for i in range(len(maps)):
-    for j in range(len(map[i])):
-        newarr[j][N-i-1] = maps[i][j]
-for row in newarr:
-    print(row)
-maps = newarr
+N = int(input())
+matrix = []
+for i in ran`ge(N):
+    m = list(map(int, input().split()))
+    matrix.append(m)
+print(matrix)
+for i in range(N):
+    print(matrix[i])
+
+
+for i in range(N):
+    for j in range(N):
+        matrix[i][j] = matrix[i][j]
 
 # def arrspin(my_list):
 #     my_reverse = []
