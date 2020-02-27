@@ -1,10 +1,16 @@
 #i번째 원소를 포함하는 경우/ 아닌경우 -> 재귀호출
 # 완전탐색으로 풀었음 -> 시간이 많이 나옴
+# 백트래킹으로 풀면 잘풀릴듯
+'''
+1
+5 16
+1 3 3 5 6
+'''
 def f(i,N,B):    # B이상의 값중 가장작은걸 출력
     global bit
     global result
     print(visited)
-    if i == N:      # base case : bit배열의 모든칸이 결정됨
+    if i == N:
         sum = 0       # sum
         for j in range(N):
             if visited[j] == 1:
@@ -22,7 +28,6 @@ for tc in range(1,T+1):
     N ,B= list(map(int,input().split()))    #5, 16
     bit = list(map(int,input().split()))
     visited = [0]*N
-    result = []         # 조건을 만족하는 부분집합의 갯수
-    f(0,N,B)    # 부분집합을 구하고 -> 총합이 10인 부분집합갯수 세기
-            #  N은 원소수, K는 부분집합의 합 EX.(1,2,8) 같은거
+    result = []
+    f(0,N,B)
     print("#{} {}".format(tc,min(result)-B))
