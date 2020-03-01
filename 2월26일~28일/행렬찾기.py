@@ -41,15 +41,16 @@ def find(x,y):
         sero+=1
         if 0 > nx or nx >= n or 0 > ny or ny >= n:
             break
-    return [sero, garo,sero*garo]
+    return [sero, garo, sero*garo]
 
 T = int(input())
 for tc in range(1,T+1):
     n = int(input())
     case = []
     result = []
-    stan = []
     a = []
+    re = []
+    sum = 0
     for _ in range(n):
         arr = list(map(int, input().split()))
         case.append(arr)
@@ -57,20 +58,17 @@ for tc in range(1,T+1):
     for i in range(n):
         for j in range(n):
             if visited[i][j] == 0 and case[i][j] != 0:
-                result.append(find(i,j))
-    print(result)
-    for i in range(len(result)):
-        stan.append(result[i][-1])
-    stan.sort()
-    print(stan)
-    for i in range(len(stan)):
-        for j in range(len(result)):
-            if stan[i] == result[j][0]*result[j][1]:
-                a.append(result[j][0])
-                a.append(result[j][1])
-                # stan.remove(stan[i])
-                # stan.insert(i,0)
-    a = list(map(str,a))
-    a = " ".join(a)
-    num = len(result)
-    print("#{} {} {}".format(tc,num,a))
+                a.append(find(i,j))
+
+    n = len(a)
+    # 크기순서대로 다시 배열
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if a[j][-1] > a[j+1][-1]:
+                a[j],a[j+1] = a[j+1],a[j]
+            elif a[j][-1] == a[j+1][-1] and a[j][0] > a[j+1][0]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+
+    print("#{} {}".format(tc,n), end = " ")
+    for i in range(n):
+        print("{} {}".format(a[i][0],a[i][1]), end = " ")
