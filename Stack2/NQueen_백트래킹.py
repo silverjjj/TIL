@@ -16,6 +16,7 @@ def queen(level):
             print(cols)
             queen(level+1)          #재귀호출   -> 재귀에서 돌아오면 다시 반복 (i증가)
         return
+
 T = int(input())
 for tc in range(1,T+1):
     N = int(input())
