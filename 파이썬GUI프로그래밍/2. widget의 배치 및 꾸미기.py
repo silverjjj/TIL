@@ -31,4 +31,4 @@
 # lbl = Label(win, text = "안녕파이썬", font = f)
 # lbl.pack()
 
-win.mainloop()
+ win.mainloop()
