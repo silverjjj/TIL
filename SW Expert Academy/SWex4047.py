@@ -1,28 +1,28 @@
-T = int(input())
-for tc in range(1, T + 1):
-    bases = str(input())
-    base = []
-    for i in bases:
-        base.append(i)
-    h_num = d_num = s_num = c_num = 0
-    card = []
-    for i in range(0, len(bases), 3):
-        card.append(bases[i:i + 3])
-    a = list(set(card))
-
-    if len(a) == len(card):
-        for i in range(len(a)):
-            if a[i][0] == 'H':
-                h_num += 1
-            elif a[i][0] == 'D':
-                d_num += 1
-            elif a[i][0] == 'S':
-                s_num += 1
-            elif a[i][0] == 'C':
-                c_num += 1
-        print("#{} {} {} {} {}".format(tc, 13 - s_num, 13 - d_num, 13 - h_num, 13 - c_num))
-    else:
-        print(f"#{tc} " + "ERROR")
+# T = int(input())
+# for tc in range(1, T + 1):
+#     bases = str(input())
+#     base = []
+#     for i in bases:
+#         base.append(i)
+#     h_num = d_num = s_num = c_num = 0
+#     card = []
+#     for i in range(0, len(bases), 3):
+#         card.append(bases[i:i + 3])
+#     a = list(set(card))
+#
+#     if len(a) == len(card):
+#         for i in range(len(a)):
+#             if a[i][0] == 'H':
+#                 h_num += 1
+#             elif a[i][0] == 'D':
+#                 d_num += 1
+#             elif a[i][0] == 'S':
+#                 s_num += 1
+#             elif a[i][0] == 'C':
+#                 c_num += 1
+#         print("#{} {} {} {} {}".format(tc, 13 - s_num, 13 - d_num, 13 - h_num, 13 - c_num))
+#     else:
+#         print(f"#{tc} " + "ERROR")
 
 # T = int(input())
 # for tc in range(1,T+1):
