@@ -1,35 +1,31 @@
+#SWex6190 정곤이의 단조 증가하는수
+for tc in range(1,int(input())+1):
+    n = int(input())
+    arr = list(map(int, input().split()))
 
-n = int(input())
-arr = list(map(int, input().split()))
+    # n개의 값들에서 2개 선택해서 곱하는 경우
+    ans = -1
+    for i in range(n-1):
+        for j in range(i+1,n):
+            num = arr[j]*arr[i]
+            if ans >= num:
+                break        # 건너뛴다.
 
-result = 0
-max_list = []
-for i in range(n-1):
-    num = 0
-    if arr[i+1] >= arr[i]:
-        num += arr[i+1]*arr[i]
-        while num:
-            n = num % 10    #1의자리를 얻을수있다.
-            if pre < n:     #n이 이전 수보다 크면 -> 단조증가가아님
-                islnc = False
-                break
-            num = num // 10
-            pre = n
+            t = num
+            b = t % 10
+            t //= 10
+            while t:
+                a = t % 10
+                if a > b:
+                    break
+                t //=10
+                b = a
+            else:       # 단조증가하는수
+                ans = max(ans,num)
+    print(ans)
 
 
 
-        max_list.append(sum)
-
-
-    else:
-        result = -1
-        break
-if result == -1:
-    result = -1
-elif result == 0:
-    result = max(max_list)
-
-print(result)
 # T = int(input())
 # for tc in range(1,T+1):
 #     N = int(input())
