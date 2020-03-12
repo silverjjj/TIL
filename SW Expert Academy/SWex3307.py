@@ -1,15 +1,9 @@
-def find(n,num):
-    global s
-    s.append(num[0])
-    for i in range(1,n):
-        if num[i] > s[-1]:
-            s.append(num[i])
-        elif num[i] < s[-1]:
-            if
-            s.pop()
-            s.append(num[i])
-
-N = int(input())
-case = map(int, input().split())
-s = []
-find(N,case)
+for tc in range(int(input())):
+    N = int(input())
+    num = list(map(int, input().split()))
+    maxV = sum = 0
+    for i in range(N-1):    # i: 0~3
+        sum = (num[i+1] - num[i])
+        if sum > maxV:
+            maxV = sum
+    print("#{} {}".format(tc+1,maxV))
