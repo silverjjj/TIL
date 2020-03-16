@@ -1,10 +1,13 @@
 for tc in range(1, 1+int(input())):
-    N = input()
-    cnt = 0
-    result = 'Not exist'
-    for i in range(len(N)//2):
-        if N[i] == N[-1-i]:
-            cnt += 1
-    if len(N)//2 == cnt:
-        result = 'Exist'
-    print("#{} {}".format(tc,result))
+    s = input()
+    N = len(s)
+    ans = "Not exist"
+    if N ==1:
+        ans = "Exist"
+    else:
+        i = 0
+        while i < N//2 and (s[i] ==s[N-1-i] or s[i] =="?" or s[N-1-i]=="?"):
+            i+=1
+        if i == N//2:
+            ans ="Exist"
+    print("#{} {}".format(tc,ans))
