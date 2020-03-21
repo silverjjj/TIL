@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 N = int(input())
 matrix = [[0 for _ in range(N)] for _ in range(N)]
 matrix[0][0] = 1
@@ -10,7 +18,7 @@ num = 1
 
 while num < N*N:
     for i in range(4):
-        nr = currentr + dr[i]
+        nr = currentr + dr[i]q
         nc = currentc + dc[i]         # nc랑 nr은 현재 위치
         while 0 <= nc < N and 0 <= nr < N:
             if matrix[nr][nc] == 0:

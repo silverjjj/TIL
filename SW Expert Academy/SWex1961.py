@@ -1,17 +1,24 @@
 
-N = int(input())
-matrix = []
-for i in ran`ge(N):
-    m = list(map(int, input().split()))
-    matrix.append(m)
-print(matrix)
-for i in range(N):
-    print(matrix[i])
+n = int(input())
+rm = [list(map(int, input().split())) for _ in range(n)]
+print(rm)
 
+def f(n, rm):
+    for i in range()
 
-for i in range(N):
-    for j in range(N):
-        matrix[i][j] = matrix[i][j]
+#
+#
+# for i in range(N):
+#     m = list(map(int, input().split()))
+#     matrix.append(m)
+# print(matrix)
+# for i in range(N):
+#     print(matrix[i])
+#
+#
+# for i in range(N):
+#     for j in range(N):
+#         matrix[i][j] = matrix[i][j]
 
 # def arrspin(my_list):
 #     my_reverse = []
