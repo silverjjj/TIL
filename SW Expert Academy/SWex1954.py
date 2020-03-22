@@ -5,7 +5,6 @@
 
 
 
-
 N = int(input())
 matrix = [[0 for _ in range(N)] for _ in range(N)]
 matrix[0][0] = 1
