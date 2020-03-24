@@ -57,6 +57,8 @@ dfs(0,0) # 초기 외부공기 설정
 #외부 공기 먼저 찾고, 외부 공기랑 맞닫는 면 찾기
 cnt = 0
 last = 0
+for row in cheese:
+    print(row)
 while True:
     num_of_cheese = 0
     visit = [[0] * C for _ in range(R)]
@@ -68,3 +70,15 @@ while True:
         break
 print(cnt)
 print(last)
+'''
+
+바깥 공기와 치즈 구멍을 분리 하는 작업이 있었습니다. 
+-1로 만들어주고 치즈구멍을 0 으로 
+판단 하는 상황이었는데
+
+치즈가 녹으면 치즈 구멍이 공기가 되는
+ 상황을 재현하기 위해서 dfs 실행하였습니다. 
+
+
+
+'''
