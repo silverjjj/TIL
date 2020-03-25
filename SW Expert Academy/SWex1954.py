@@ -1,36 +1,33 @@
+T = int(input())
+for tc in range(1,T+1):
+    n = int(input())
+    rm = [[0]*n for _ in range(n)]
+    num = 1
+    rm[0][0] = 1
+    dx = [0,1,0,-1]
+    dy = [1,0,-1,0]
+    # 오 아래 왼 위
+    tmpx = tmpy = 0
+    while num < n**2:
+        for k in range(4):
+            nx = tmpx + dx[k]
+            ny = tmpy + dy[k]
+            while 0<=nx<n and 0<=ny<n:
+                if rm[nx][ny] == 0:
+                    num += 1
+                    rm[nx][ny] = num
+                    # print(rm)
+                    tmpx =nx
+                    tmpy =ny
 
+                    nx = tmpx + dx[k]
+                    ny = tmpy + dy[k]
+                    # print(nx,ny)
+                else:
+                    break
+    print("#{}".format(tc))
+    for i in range(n):
+        for j in range(n):
+            print(rm[i][j], end = " ")
+        print()
 
-
-
-
-
-
-N = int(input())
-matrix = [[0 for _ in range(N)] for _ in range(N)]
-matrix[0][0] = 1
-    # 오른, 아래, 왼, 위
-dr = [0, 1, 0, -1]      # row 열 - 세로
-dc = [1, 0, -1, 0]      # columm 행-가로
-print(matrix)
-currentc =currentr =0
-num = 1
-
-while num < N*N:
-    for i in range(4):
-        nr = currentr + dr[i]q
-        nc = currentc + dc[i]         # nc랑 nr은 현재 위치
-        while 0 <= nc < N and 0 <= nr < N:
-            if matrix[nr][nc] == 0:
-                num += 1
-                matrix[nr][nc] = num
-                print(matrix)
-                print(nr, nc)
-                currentc = nc
-                currentr = nr
-                nc = currentc + dc[i]
-                nr = currentr + dr[i]
-                print(nr, nc)
-            else:
-                break
-
-print(matrix)
