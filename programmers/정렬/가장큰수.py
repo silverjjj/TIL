@@ -1,20 +1,30 @@
-def solution(nums):
-    answer = ''
-    num = []
-    for i in nums:
-        num.append(str(i))
-    print(num)
-    def find(num,n,k):
-        if n == k:
-            return
-        else:
+def solution(numbers):
+    num = list(map(str,numbers))
+    maxV = 0
+    sum = ''
+    visit = [0] * len(num)
+    p = [0] * len(num)
+    find(0, len(num))
+    return maxV
+
+def find(n,k):
+    global visit, p, num, maxV
+    if n == k:
+        sum = ''
+        for j in p:
+            sum += j
+        sum = int(sum)
+        if sum > int(maxV):
+            maxV = str(sum)
+    else:
+        for i in range(k):
+            if visit[i] == 0:
+                p[n] = num[i]
+                visit[i] = 1
+                find(n+1,k)
+                visit[i] = 0
 
 
 
-    find(num,0,len(num))
-
-    return answer
 
 
-nums = [3, 30, 34, 5, 9]
-solution(nums)
