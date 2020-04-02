@@ -1,9 +1,9 @@
+sum = ''
 def solution(numbers):
     num = list(map(str,numbers))
     maxV = 0
-    sum = ''
-    visit = [0] * len(num)
-    p = [0] * len(num)
+    visit = [0] * len(numbers)
+    p = [0] * len(numbers)
     find(0, len(num))
     return maxV
 
