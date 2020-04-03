@@ -29,7 +29,7 @@ DFS 알고리즘
 # dfs의 스택구현
 V,E = map(int, input().split())
 G = [[] for _ in range(V+1)]
-
+# 인접리스트를 사용
 for _ in range(E):
     u, v = map(int,input().split())
     G[u].append(v)

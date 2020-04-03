@@ -13,5 +13,5 @@ for tc in range(1,T+1):
             # print(arr)
             f(m,k+1)
     f(m,0)
-    print("# {} {}".format(tc,arr[0]))
+    print("#{} {}".format(tc,arr[0]))
 
