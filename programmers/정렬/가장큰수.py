@@ -1,30 +1,20 @@
-sum = ''
+# 이거 너무어려웠다..
 def solution(numbers):
-    num = list(map(str,numbers))
-    maxV = 0
-    visit = [0] * len(numbers)
-    p = [0] * len(numbers)
-    find(0, len(num))
-    return maxV
-
-def find(n,k):
-    global visit, p, num, maxV
-    if n == k:
-        sum = ''
-        for j in p:
-            sum += j
-        sum = int(sum)
-        if sum > int(maxV):
-            maxV = str(sum)
-    else:
-        for i in range(k):
-            if visit[i] == 0:
-                p[n] = num[i]
-                visit[i] = 1
-                find(n+1,k)
-                visit[i] = 0
-
-
-
-
-
+    result = []
+    for number in numbers:
+        origin = str(number)
+        # print(origin[0])
+        num = list(str(number))
+        st = 0
+        # print(origin)
+        while len(num) <= 4:
+            num.append(origin[st])
+            st = (st + 1) % len(origin)
+        num = int("".join(num))
+        result.append([num,origin])
+    # print(result)
+    result = sorted(result,reverse = True)
+    # print(result)
+    return str(int("".join([item[1] for item in result])))
+numbers = [121,12]
+print(solution(numbers))
