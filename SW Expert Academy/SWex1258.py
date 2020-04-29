@@ -21,7 +21,7 @@
 dx = [0,1,0,-1]
 dy = [1,0,-1,0]
 def find(x,y):
-    # sero = garo =0
+    global sunse,xy
     s = []
     s.append([x,y])
     while s:
@@ -38,33 +38,41 @@ def find(x,y):
         print(r)
     sero =0
     garo =0
+
     tmpx = x
-    tmpy = y
-    while visit[x][tmpy] == 1 and 0<=x<n:
+    while visit[x][y] == 1 and 0<=x<n:
         x += 1
         sero+=1
-        # print(sero)
-
-    while visit[tmpx][y] == 1 and 0<=y<n:
-        # print("-----")
+        if not 0<=x<n:
+            break
+    while visit[tmpx][y] == 1:
         y+=1
         garo+=1
-    print(tmpx,tmpy)
-    return sero,garo
+        if not 0<=y<n:
+            break
+    # print(sero,garo)
+    sunse.append(sero*garo)
+    xy.append([sero,garo])
 # T = int(input())
 # for tc in range(1,T+1):
 n = int(input())
 arr = [list(map(int,input().split())) for _ in range(n)]
 visit = [[0]*n for _ in range(n)]
 minV = 123456
-sunse = []
 
+sunse = []
+xy = []
 result = 0
 for i in range(n):
     for j in range(n):
         if visit[i][j] == 0 and arr[i][j] != 0:
-            print(find(i,j))
+            find(i,j)
 
             # result = sero*garo
             # sunse.append([result,sero,garo])
+
 print(sunse)
+print(xy)
+# 정렬하는걸 못하겠다.
+
+# for i in range(len(sunse)):
