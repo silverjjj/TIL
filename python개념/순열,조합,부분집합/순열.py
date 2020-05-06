@@ -1,21 +1,23 @@
 # 순열 코드
-def f(n,k):
+def perm(n):
     if n == k:  # 다 채운거니까 p를 출력
         print(p)
-        # p의 갯수가 A갯수!
+
         # -> 5! = 120개
+
     else:
         for i in range(k):
-            if used[i] == 0:    # i번 원소가 사용되지 않았다면
+            if not used[i]:    # i번 원소가 사용되지 않았다면
                 used[i] = 1     # 사용함으로 표시
-                p[n] = A[i]
-                f(n+1,k)        # n+1 원소결정
+                p[n] = arr[i]
+                perm(n+1)        # n+1 원소결정
                 used[i] = 0     # 다른 자리에서 사용하도록 풀어줌
-A = [2,3,5]
-used = [0]*len(A)
-p = [0]*len(A)   # 채울 칸수
-f(0,len(A))  # 0번칸부터 채울껀데 총 5개 란 ㅡ이미
+arr = [7,7,7,5,3,2]
+used = [0]*len(arr)
+p = [0]*len(arr)   # 결과저장배열
+k = len(arr)      # 원소의 갯수
 
+perm(0)
 
 
 
