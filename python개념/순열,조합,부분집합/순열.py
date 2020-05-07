@@ -12,10 +12,12 @@ def perm(n):
                 p[n] = arr[i]
                 perm(n+1)        # n+1 원소결정
                 used[i] = 0     # 다른 자리에서 사용하도록 풀어줌
-arr = [7,7,7,5,3,2]
+arr = [1,2,3,4,5]
+
+k = len(arr)
 used = [0]*len(arr)
 p = [0]*len(arr)   # 결과저장배열
-k = len(arr)      # 원소의 갯수
+      # 원소의 갯수
 
 perm(0)
 
