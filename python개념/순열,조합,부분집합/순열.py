@@ -12,7 +12,7 @@ def perm(n):
                 p[n] = arr[i]
                 perm(n+1)        # n+1 원소결정
                 used[i] = 0     # 다른 자리에서 사용하도록 풀어줌
-arr = [1,2,3,4,5]
+arr = [1,2,3,4]
 
 k = len(arr)
 used = [0]*len(arr)

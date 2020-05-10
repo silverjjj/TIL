@@ -1,5 +1,5 @@
 # # 재귀를 이용한 부분집합
-arr = 'ABCDE'
+arr = [1,2,3,4,5,6]
 N = len(arr)
 bit = [0]*N
 cnt=0
