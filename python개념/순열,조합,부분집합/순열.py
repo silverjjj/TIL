@@ -2,13 +2,13 @@
 def perm(n):
     if n == k:  # 다 채운거니까 p를 출력
         print(p)
-
+        return
         # -> 5! = 120개
-
     else:
         for i in range(k):
             if not used[i]:    # i번 원소가 사용되지 않았다면
                 used[i] = 1     # 사용함으로 표시
+                # print(used,p)
                 p[n] = arr[i]
                 perm(n+1)        # n+1 원소결정
                 used[i] = 0     # 다른 자리에서 사용하도록 풀어줌
