@@ -1,5 +1,4 @@
 # # SWex5656. [모의 SW 역량테스트] 벽돌 깨기
-import itertools
 import copy
 
 dx = [0,1,0,-1]
@@ -26,7 +25,7 @@ def drop(p,rm):
                 q.append([i,j])
                 # rm[i][j] = 0
                 while q:
-                    print(q)
+                    # print(q)
                     x,y = q.pop(0)
                     # print(x,y,rm[x][y])
                     for l in range(0, rm[x][y]):
@@ -56,16 +55,23 @@ for tc in range(1,T+1):
     room = [list(map(int,input().split())) for _ in range(H)]
     maxV = 0
     # 중복 순열 만들기 W개중에서 N개를 가진 중복순열을 만든다.
-    permu = list(itertools.product(range(W),repeat=N))
-    for p in permu:
-        # print(p)
-        rm = copy.deepcopy(room)
-        drop(p,rm)
-        cnt = reuslt = 0
-        for ro in rm:
-            cnt += ro.count(0)
-            # print(cnt)
-        if cnt > maxV:
-            maxV = cnt
-
+    def perm(k):
+        global maxV
+        if N == k:
+            rm = copy.deepcopy(room)
+            drop(p, rm)
+            cnt = result = 0
+            for ro in rm:
+                cnt += ro.count(0)
+                # print(cnt)
+            if cnt > maxV:
+                maxV = cnt
+        else:
+            for i in range(len(arr)):
+                p[k] = arr[i]
+                perm(k + 1)
+    arr = [number for number in range(W)]
+    # print(arr)
+    p = [0] * N
+    perm(0)
     print("#{} {}".format(tc,W*H-maxV))

@@ -32,6 +32,10 @@ perm(0)
 
 
 
+
+
+
+
 # def permutations(prefix,k):
 #     if len(prefix) == r:
 #         yield prefix
