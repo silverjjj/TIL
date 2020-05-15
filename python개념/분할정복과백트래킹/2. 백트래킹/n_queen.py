@@ -1,3 +1,4 @@
+# 백트래킹의 아주 정석적인 문제 n_queen
 def backtrack(idx): # idx = 행
     global n,cnt
     if idx == n:

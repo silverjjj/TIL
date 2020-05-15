@@ -18,7 +18,6 @@ k = len(arr)
 used = [0]*len(arr)
 p = [0]*len(arr)   # 결과저장배열
       # 원소의 갯수
-
 perm(0)
 
 
