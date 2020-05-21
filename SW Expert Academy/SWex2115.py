@@ -29,7 +29,7 @@
 #         # print(rm[i][j:j+m])
 #         find(j+m,i,0)
 # # 선택할때마다 find 함수 ㄱ
-
+#
 # def subset(k, sum_num, total,comp):
 #     global visited,maxV
 #     if sum_num > maxc:  # 가지치기
@@ -65,22 +65,47 @@
 #     find(rm,c+1,st)
 
 
-def find(x,y):
-    stan = 0
-    if y+m < n:
-        for i in range(y,n):
-            stan = rm[x][y:y+m]
+def subset(k, sum_num, total,comp):
+    global visited,maxV
+    if sum_num > maxc:  # 가지치기
+        return
+    if k == m:  # 목표도달
+        if sum_num <= maxc:
+            if comp > maxV:
+                maxV = comp
+        return
+    else:
+        visited[k] = 1
+        subset(k + 1, sum_num + total[k], total,comp+(total[k]**2))
+        visited[k] = 0
+        subset(k + 1, sum_num, total, comp)
 
+
+def find(x,y):
+    global result
+    if y+m < n:
+        v = 0
+        for l in range(y,n):
+            v = sum(rm[x][l:l+m])
+            com = 0
+            if v <= maxc:
+                for k in rm[x][l:l+m]:
+                    com += (k**2)
+            else: #  total > maxc:
+                subset(0,0, rm[x][l:l+m])
+                com = maxV
+
+
+            result.append(v)
 n,m,maxc = map(int,input().split())
 rm = [list(map(int,input().split())) for _ in range(n)]
 result = []
-sum = 0
+stan = 0
 for i in range(n):
-    for j in range(n-m+1):
-        sum = rm[i][j:j+m]
-        find(i,j+m+1) # 같은행
+    fos j in range(n-m+1):
+        stan = rm[i][j:j+m]  # 기준값
+        find(i,j+m+1) # 모든 같은행 찾기
         # last()      # 남은것
-
 
 # print(st)
 # for _ in range(n-1):
@@ -88,7 +113,7 @@ for i in range(n):
 #         st[j]+=1
 #     print(st)
 #     find(rm,0,st)
-result = sorted(result)
-print(result)
-last = result[-1]+result[-2]
-print(last)
+# result = sorted(result)
+# print(result)
+# last = result[-1]+result[-2]
+# print(last)

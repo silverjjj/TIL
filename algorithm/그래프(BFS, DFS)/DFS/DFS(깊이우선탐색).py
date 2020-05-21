@@ -25,8 +25,11 @@ DFS 알고리즘
 5 6
 6 7
 3 7
+출력
+1 2 4 6 5 7 3 
 '''
-# dfs의 스택구현
+
+# dfs를 반복과 인접리스트로 구현
 V,E = map(int, input().split())
 G = [[] for _ in range(V+1)]
 # 인접리스트를 사용
@@ -34,47 +37,44 @@ for _ in range(E):
     u, v = map(int,input().split())
     G[u].append(v)
     G[v].append(u)
-print(G)
 visit = [0] * (V + 1)
-S = []
-v = 1 # 출발지점
-S.append(v);
-print(v,end = ' ')
-visit[1] = 1
-
-# 빈 스택 아닐 동안안
-while S:
+v = 1
+s = []
+s.append(v)
+print(G)
+visit[v] = 1
+print(v, end=" ")
+while s:
     # v의 방문하지 않은 인접정점을 찾는다.
-    for w in G[v]: # v=1로시작 1와 인접한것들중 작은수부터 간다.
-        if visit[w] == 1:    # 방문했다면 통과하고 방문하지 않았다면 push한다.
+    for w in G[v]:  # v=1로시작 1와 인접한것들중 작은수부터 간다.
+        if visit[w] == 1:  # 방문했다면 통과하고 방문하지 않았다면 push한다.
             continue
         # v ----> w
         # 방문하지 않았다면.
-        S.append(w)
+        s.append(w)
+        # print(s)
         visit[w] = 1
-        print(w, end = " ")       # 푸쉬후 방문표시
-        v = w #  v에서 w로 이동하는거           # 자리를 이동했으니 v=w를 통해 이동한 자리에서 다시시작
+        print(w, end=" ")  # 푸쉬후 방문표시
+        v = w  # v에서 w로 이동하는거           # 자리를 이동했으니 v=w를 통해 이동한 자리에서 다시시작
         break
     else:
+        # print(s)
         # 그 이전에 방문한 정점으로
-        v = S.pop()                         # 이동한 v정점에서 인접한 모든 점이 방문상태면 pop하여 그 이전자리로 다시 간다.
+        v = s.pop()  # 이동한 v정점에서 인접한 모든 점이 방문상태면 pop하여 그 이전자리로 다시 간다.
 
 
-# # dfs의 재귀구현
+# # dfs를 재귀+인접행렬로 구현
 # def DFS(v):
-#     visit[v] = 1
+#     visited[v] = 1
 #     print(v, end = " ")
-#     for w in G[v]:
-#         if visit[w] == 1:
-#             continue
-#         DFS(w)
-#
+#     for i in range(1,V+1):
+#         if adj[v][i] == 1 and visited[i] == 0:
+#             DFS(i)
 # V,E = map(int, input().split())
-# G = [[] for _ in range(V+1)]
-#
+# adj = [[0]*(V+1) for _ in range(V+1)]
 # for _ in range(E):
 #     u, v = map(int,input().split())
-#     G[u].append(v)
-#     G[v].append(u)
-# visit = [0] * (V+1)
+#     adj[u][v] = 1
+#     adj[v][u] = 1
+# visited = [0] * (V+1)
 # DFS(1)
