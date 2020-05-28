@@ -41,73 +41,88 @@ dy = [0,1,0,-1]
 N,M,K = map(int,input().split())
 arr = [list(map(int,input().split())) for _ in range(N)]
 cells = [[0] *(M+K) for _ in range(N+K)]
-active = [[-1] *(M+K) for _ in range(N+K)]
+active = [[0] *(M+K) for _ in range(N+K)]
 # cell_list = [[] for _ in range(11)]
 for i in range(N):
     for j in range(M):
         if arr[i][j] != 0:
             cells[i+K//2][j+K//2] = arr[i][j]
-# k = K // 2
+            active[i+K//2][j+K//2] = arr[i][j]
+# for row in active:
+#     print(row)
 time = 0
 while time < K:
     time +=1
     cell_add = []
     for x in range(N+K-1):
         for y in range(M+K-1):
-            if cells[x][y] != 0:
-                if 0 <=(time % (cells[x][y]*2)) < time:   #비활성화 시작
-                    tmp = active[x][y]
-                    active[x][y] = tmp - 1
-                    continue
-                if time % cells[x][y] == 0:
-                    cell_add.append([x, y, cells[x][y]])
-                    active[x][y] = cells[x][y]
-                #
-                # if time % 2 == 1 and cells[x][y] == 1:
-                #     cell_add.append([x,y,cells[x][y]])
-                #     continue
-                # if time >= 2 and cells[x][y] > 1:
-                #     # print(time,cells[x][y])
-                #     if time % cells[x][y] == 0:
-                #         cell_add.append([x,y,cells[x][y]])
+            # 번식 직전상태
+            if active[x][y] == -1:
+                #번식과 동시에 죽음
+                active[x][y] =0
+                
+            # 활성세포가 존재하면
+            if active[x][y] != 0:
+                active[x][y] -= 1
 
-    cell_add.sort(key=lambda x:x[2], reverse=True)
-    print("------------------------------------------------")
-    print(cell_add, len(cell_add))
-    for cell in cell_add:
-        x = cell[0]
-        y = cell[1]
-        v = cell[2]
-        active[x][y] = 0
-        for l in range(4):
-            nx = x + dx[l]
-            ny = y + dy[l]
-            # 비어있어야 전파
-            if cells[nx][ny] == 0:
-                cells[nx][ny] = v
-                # 해당 위치 활성화표시
-                # active[nx][ny] = 1
-    # print(time)
-    for row1 in cells:
-        print(row1)
-    # 활성상태 만드는 로직
-    # cell_add = []
-    # for x in range(N+K-1):
-    #     for y in range(M+K-1):
-    #         if cells[x][y]:
-    #             if time % 2 == 1 and cells[x][y] == 1:
-    #                 cell_add.append([x,y,cells[x][y]])
-    #                 continue
-    #             if time >= 2 and cells[x][y] > 1:
-    #                 # print(time,cells[x][y])
-    #                 if time % cells[x][y] == 0:
-    #                     cell_add.append([x,y,cells[x][y]])
 
-print("------------------------------------------------")
-result = 0
-cnt = 0
-for i in range(N + K - 1):
-    for j in range(M + K - 1):
-        if active[i][j] !=0:
-            cnt +=1
-print(cnt)
+
+                if time%(cells[x][y]+1) == 0:
+                    cell_add.append([x,y,cells[x][y]])
+
+
+
+
+
+
+
+
+
+
+
+
+# # k = K // 2
+# time = 0
+# tmp = []
+# while time < K:
+#     for tp in tmp:
+#         x = tp[0]
+#         y = tp[1]
+#         active[x][y] =0
+#     cell_add = []
+#     # 활성을 위한 세포찾기
+#     for x in range(N+K-1):
+#         for y in range(M+K-1):
+#             if cells[x][y] != 0:
+#                 if time%(cells[x][y]+1) == 0:
+#                     cell_add.append([x,y,cells[x][y]])
+#
+#     cell_add.sort(key=lambda x:x[2], reverse=True)
+#     # print(cell_add, len(cell_add))
+#     for cell in cell_add:
+#         x = cell[0]
+#         y = cell[1]
+#         v = cell[2]
+#         tmp.append([x,y])
+#         for l in range(4):
+#             nx = x + dx[l]
+#             ny = y + dy[l]
+#             # 비어있어야 전파
+#             if cells[nx][ny] == 0 and active[nx][ny] ==0:
+#                 cells[nx][ny] = v
+#                 # 해당 위치 활성화표시
+#                 active[nx][ny] = 1
+#     time += 1
+#
+# print("------------------------------------------------")
+# result = 0
+#
+# for row in cells:
+#     print(row)
+#     # result += sum(row)
+# print("------------------------------------------------------------------")
+# for row in active:
+#     print(row)
+#     result += sum(row)
+# print(result)
+
