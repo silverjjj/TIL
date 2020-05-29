@@ -17,6 +17,7 @@ def dfs(x,y,k,result):
             dfs(work[2*i], work[(2*i)+1], k+1, result + abs(x - work[2*i]) + abs(y - work[2*i+1]))
             visited[i] = 0
 
+
 T = int(input())
 for tc in range(1,T+1):
     n = int(input())
