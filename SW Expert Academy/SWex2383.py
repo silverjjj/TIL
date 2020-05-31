@@ -5,9 +5,6 @@ T = int(input())
 for tc in range(1,T+1):
     n = int(input())
     rm = [list(map(int,input().split())) for _ in range(n)]
-    if tc == 5:
-        for row in rm:
-            print(row)
     person = []
     stair = []
     num = 0
@@ -42,15 +39,16 @@ for tc in range(1,T+1):
         if A_st[i][:] == B_st[i][:]:
             A_st[i][0] += A_value
             B_st[i][0] += B_value
-            if tc == 5:
-                print(A_st[i][0],B_st[i][0])
             if A_st[i][0] > B_st[i][0]:
+                A_st[i][0] -= A_value
+                B_st[i][0] -= B_value
                 A_st.pop(i)
+                break
             else:
+                A_st[i][0] -= A_value
+                B_st[i][0] -= B_value
                 B_st.pop(i)
-    # if tc == 5:
-    #     print(A_st)
-    #     print(B_st)
+                break
 
     done = []
     time_A = []
@@ -100,14 +98,5 @@ for tc in range(1,T+1):
                     if len(time_B) < 3:
                         done.append(y[:])
                         time_B.append(0)
-        # if tc == 5:
-        #     print("---------------------------")
-        #     print("cnt:",cnt)
-        #     print("done:",done)
-        #     print("time_A: ",time_A)
-        #     print("time_B: ", time_B)
-    # if A_value > B_value:
-    #     cnt -= B_value
-    # else:
-    #     cnt -= A_value
+
     print("#{} {}".format(tc,cnt+1))

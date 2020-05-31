@@ -1,3 +1,5 @@
+# mst 푸는 문제는 kruskal or prim으로 풀자!!
+
 # make_set : 모든 정점에 대해 집합 생성
 def make_set(x):
     p[x] = x
