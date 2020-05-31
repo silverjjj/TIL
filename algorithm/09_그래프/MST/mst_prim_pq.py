@@ -46,11 +46,11 @@ num = [0]*(V+1)
 heapq.heappush(pq,(0,0))
 result = 0
 while pq:
+    print(pq)
     print("----------------------------------------------------------")
     # k : 가중치값, node : 정점을 pop
-    print(pq)
     k, node = heapq.heappop(pq)
-    print(mst,k,node)
+    print(k,node)
 
     # 해댱 idx의 mst값이 True면 진행 xx
     if mst[node]:   # mst가 true일경우 continue
