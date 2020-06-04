@@ -2,7 +2,7 @@
 from collections import deque
 dx = [0,1,0,-1]
 dy = [1,0,-1,0]
-def dfs(x,y):
+def bfs(x,y):
     global minV
     q = deque([])
     q.append([x,y])
@@ -17,7 +17,7 @@ def dfs(x,y):
             ny = sy + dy[k]
             if 0<=nx<N and 0<=ny<N:
                 tmpV = rm[nx][ny] + visited[sx][sy]
-                if visited[nx][ny] == -1 or visited[nx][ny] >  tmpV:
+                if visited[nx][ny] == -1 or visited[nx][ny] > tmpV:
                     visited[nx][ny] = tmpV
                     q.append([nx, ny])
 
@@ -27,5 +27,7 @@ for tc in range(1,T+1):
     rm = [list(map(int,input())) for _ in range(N)]
     visited = [[-1]*N for _ in range(N)]
     minV = 987654321
-    dfs(0,0)
+    bfs(0,0)
+    # for row in visited:
+    #     print(row)
     print("#{} {}".format(tc, minV))

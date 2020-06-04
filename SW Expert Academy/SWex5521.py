@@ -26,3 +26,4 @@ for tc in range(1,T+1):
             invited[i] = 1
     invited[1] = 0
     print("#{} {}".format(tc,sum(invited)))
+
