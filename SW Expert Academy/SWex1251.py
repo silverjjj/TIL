@@ -8,7 +8,7 @@
 0 100 0 100 600 2000
 0.3
 '''
-
+# prim방법
 import heapq
 T=int(input())
 for tc in range(1,T+1):
@@ -18,6 +18,7 @@ for tc in range(1,T+1):
         tmp = list(map(int,input().split()))
         for i in range(N):
              arr[i].append(tmp[i])
+
     E = float(input())
     INF = float('inf')  # 무한
     weights = [INF]*N       # 가중치값 기록

@@ -1,4 +1,6 @@
 # mst 푸는 문제는 kruskal or prim으로 풀자!!
+# kruskal의 시간복잡도는 간선의 갯수
+# 간선이 많을경우 prim이 유리
 
 # make_set : 모든 정점에 대해 집합 생성
 def make_set(x):
@@ -22,7 +24,6 @@ def union(x, y):
         p[px] = py  # 대표가 py
         if rank[py] == rank[py]:  # 랭크가 같으면 py의 랭크를 +=1 해준다
             rank[py] += 1
-
 
 V, E = map(int, input().split())
 edges = [list(map(int, input().split())) for i in range(E)]

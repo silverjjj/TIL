@@ -26,10 +26,10 @@ def perm(k):
         for i in range(n):
             if not used[i]:    # i번 원소가 사용되지 않았다면
                 used[i] = 1     # 사용함으로 표시
-                # print(used,p)
                 p[k] = arr[i]
                 perm(k+1)        # n+1 원소결정
                 used[i] = 0     # 다른 자리에서 사용하도록 풀어줌
+
 arr = [1,2,3,4,5]
 
 cnt = 0
