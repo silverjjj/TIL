@@ -1,8 +1,9 @@
+# SWex2382. [모의 SW 역량테스트] 미생물 격리
+dx = [0, -1, 1, 0, 0]  # x 상 하 좌 우
+dy = [0, 0, 0, -1, 1]
 
 T = int(input())
 for tc in range(1,T+1):
-    dx = [0,-1,1,0,0]   # x 상 하 좌 우
-    dy = [0,0,0,-1,1]
     n,m,k = map(int,input().split())
     cell = dict()
     for _ in range(k):

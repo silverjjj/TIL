@@ -1,6 +1,13 @@
 # SWex2112. [모의 SW 역량테스트] 보호 필름
-
-# 유효성 검사
+'''
+1. 조합을 생성한다. 이때 r은 1 ~ k-1까지 진행. why? r = k가 되면 무조건 조건이 만족해서 최대치가 된다.
+2. 조합이 생성되면 해당 번호를 0 or 1로 바꿔주는것
+3. 해당 자리를 0으로 바꿔준뒤 유망성 검사 진행 => 1로 바꿔준뒤 유망성 검사 진행
+4. 참이면 바로 return
+5. 거짓이면 다시 진행
+위 과정을 계속해서 반복한다.
+'''
+# 유망성 검사
 def checked(film, arr_cnt):
     global result
     flag = True
@@ -39,10 +46,10 @@ def find(tr):
         tmp_arr = tmp.pop(0)
         film[t][:] = tmp_arr
 
-
 # 조합생성
 def comb(n, r):
     if r == 0:
+        print(tr)
         if find(tr):
             return result
     elif n < r:
@@ -51,7 +58,6 @@ def comb(n, r):
         tr[r - 1] = arr[n - 1]
         comb(n - 1, r - 1)
         comb(n - 1, r)
-
 
 T = int(input())
 for tc in range(1, T + 1):

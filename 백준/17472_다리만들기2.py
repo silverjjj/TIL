@@ -3,30 +3,6 @@
 import heapq
 dx = [-1,0,1,0]
 dy = [0,1,0,-1]
-N, M = map(int,input().split()) # x,y
-room = [list(map(int,input().split())) for _ in range(N)]
-# 군집 생성
-used = [[0]*M for _ in range(N)]
-group = []
-for x in range(N):
-    for y in range(M):
-        s = []
-        tmp = []
-        if room[x][y] == 1 and used[x][y] == 0:
-            s.append([x,y])
-            tmp.append([x,y])
-            while s:
-                sx,sy = s.pop()
-                used[sx][sy] = 1
-                for l in range(4):
-                    nx = sx + dx[l]
-                    ny = sy + dy[l]
-                    if 0<=nx<N and 0<=ny<M and used[nx][ny] == 0 and room[nx][ny] == 1:
-                        used[nx][ny] = 1
-                        s.append([nx,ny])
-                        tmp.append([nx,ny])
-            group.append(tmp[:])
-
 # 군집간의 최단거리 측정
 def find_distance(st_x,en_x,st_y,en_y):
     a = b = 0
@@ -52,6 +28,32 @@ def find_distance(st_x,en_x,st_y,en_y):
             if room[x][st_y] != 0:
                 return False
         return True
+
+N, M = map(int,input().split()) # x,y
+room = [list(map(int,input().split())) for _ in range(N)]
+# # 군집 생성
+used = [[0]*M for _ in range(N)]
+group = []
+for x in range(N):
+    for y in range(M):
+        s = []
+        tmp = []
+        if room[x][y] == 1 and used[x][y] == 0:
+            s.append([x,y])
+            tmp.append([x,y])
+            while s:
+                sx,sy = s.pop()
+                used[sx][sy] = 1
+                for l in range(4):
+                    nx = sx + dx[l]
+                    ny = sy + dy[l]
+                    if 0<=nx<N and 0<=ny<M and used[nx][ny] == 0 and room[nx][ny] == 1:
+                        used[nx][ny] = 1
+                        s.append([nx,ny])
+                        tmp.append([nx,ny])
+            group.append(tmp[:])
+
+
 # 군집간의 최단거리를 찾자
 n = len(group)  # 군집갯수
 distance = [[0]*n for _ in range(n)]
