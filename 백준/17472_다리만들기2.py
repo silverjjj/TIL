@@ -1,5 +1,12 @@
 # 2019 삼성코테 기출문제
 # 백준_17472_다리만들기2
+'''
+1. 스택을 활용하여 group list를 만들자.
+2. 그룹간 행 or 열로 만날경우 두 그룹사이의 장애물을 확인하면서 최단거리를 찾으면서,
+그룹간 최단거리를 담은 2차원 배열을 만들자.
+3. 2차원배열로 heapq를 활용한 prin개념으로 mst를 찾자
+
+'''
 import heapq
 dx = [-1,0,1,0]
 dy = [0,1,0,-1]
@@ -81,14 +88,14 @@ weight = [INF] * n
 visited = [0]*n
 heapq.heappush(hq,(0,0))
 while hq:
-    wt, node = heapq.heappop(hq)
+    wt, node = heapq.heappop(hq)    # 가중치가 가장 작은값과 해당 노드를 pop
     if visited[node]:
         continue
     visited[node] = 1
     weight[node] = wt
     for j in range(n):
         if distance[node][j]:
-            if weight[j] > distance[node][j]:
+            if weight[j] > distance[node][j]:       # 해당 조건이 만족한다면 해당 노드의 인접한 모든 노드의 가중치와 node를 push 해준다
                 weight[j] = distance[node][j]
                 heapq.heappush(hq, (distance[node][j], j))
                 distance[node][j] = distance[j][node] = 0
