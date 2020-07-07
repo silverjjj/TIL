@@ -26,8 +26,9 @@ def stair(arr):
                     visited[i] = 1
                 else:
                     return False
-        now_val = val
 
+        # 한턴을 넘기면 현재의 값을 갱신
+        now_val = val
     return True
 
 N,L = map(int,input().split())
@@ -43,6 +44,3 @@ for j in range(N):
     if stair(col):
         cnt +=1
 print(cnt)
-
-
-
