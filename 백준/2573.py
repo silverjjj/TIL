@@ -29,16 +29,16 @@ def bfs(x,y):
             if 0<=nx<n and 0<=ny<m:
                 if ice[nx][ny] == 0:    # 빙산이 없는경우 +1 해준다
                     minus[(x, y)] += 1
-                elif ice[nx][ny] != 0 and not visited[nx][ny]:  # 빙산인데 방문하지 않을경우 append시켜줌
+                elif ice[nx][ny] != 0 and visited[nx][ny] == 0:  # 빙산인데 방문하지 않을경우 append시켜줌
                     q.append([nx,ny])
                     visited[nx][ny] = 1
-
+    return minus
 n, m = map(int, input().split())
 ice = [list(map(int, input().split())) for _ in range(n)]
 year = 0
 stan = n*m
 while True:
-    # 빙하가 없으면 바로 break
+    # step1. 빙하가 없으면 바로 종료
     res = 0
     for row in ice:
         res += row.count(0)
@@ -46,7 +46,7 @@ while True:
         print(0)
         sys.exit()
 
-    # 빙산 조사 시작
+    # step2. 빙산 조사 시작
     island = 0
     minus = dict()
     visited = [[0] * m for _ in range(n)]
@@ -55,25 +55,23 @@ while True:
             if ice[i][j] != 0 and visited[i][j] == 0:
                 bfs(i, j)
                 island += 1
+                print(minus)
+                # 두덩어리가 되는 순간 year 출력후 종료
                 if island == 2:
                     print(year)
                     sys.exit()
+    print("=====================")
+    for row in ice:
+        print(row)
 
-    # 빙산 녹이기
+    # step3. 빙산 녹이기
     for key, value in minus.items():
         ice[key[0]][key[1]] -= value
         if ice[key[0]][key[1]] < 0:
             ice[key[0]][key[1]] = 0
-    year += 1
-    # print("=====================")
-    # for row in ice:
-    #     print(row)
-    # print("+++++++++++++++++++++++++++")
-    # for row in visited:
-    #     print(row)
-    # print("--------------------------")
-    # print(year, "년후")
 
+    # step4. 빙산을 다 녹이고 난뒤 1년 추가
+    year += 1
 
 '''
 5 7
