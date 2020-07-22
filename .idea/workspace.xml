@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9939f0a9-3091-45fb-a78e-c30c59d1eecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/백준/10026.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/백준/1012.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,32 +17,33 @@
         <counts>
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="22" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="22" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="py" value="10939" />
+          <entry key="py" value="11784" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="10939" />
+          <entry key="Python" value="11784" />
         </counts>
       </usages-collector>
     </session>
@@ -83,11 +84,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/백준/10026.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="276">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/백준/1012.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <folding>
+                <marker date="1595426782004" expanded="true" signature="149:383" ph="..." />
+                <marker date="1595426782004" expanded="true" signature="387:404" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,14 +127,14 @@
         <option value="$PROJECT_DIR$/백준/2573.py" />
         <option value="$PROJECT_DIR$/백준/1325.py" />
         <option value="$PROJECT_DIR$/백준/2146.py" />
-        <option value="$PROJECT_DIR$/백준/1012.py" />
         <option value="$PROJECT_DIR$/백준/10026.py" />
+        <option value="$PROJECT_DIR$/백준/1012.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="943" />
-    <option name="width" value="982" />
+    <option name="x" value="942" />
+    <option name="width" value="983" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -129,6 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,7 +160,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.10026">
+  <component name="RunManager" selected="Python.1012">
     <configuration name="10026" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,7 +200,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1260" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="1012" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -198,7 +212,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/1260.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/1012.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -271,19 +285,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.1260" />
       <item itemvalue="Python.2667" />
       <item itemvalue="Python.2573" />
       <item itemvalue="Python.2146" />
       <item itemvalue="Python.10026" />
+      <item itemvalue="Python.1012" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1012" />
         <item itemvalue="Python.10026" />
         <item itemvalue="Python.2146" />
         <item itemvalue="Python.2573" />
         <item itemvalue="Python.2667" />
-        <item itemvalue="Python.1260" />
       </list>
     </recent_temporary>
   </component>
@@ -301,14 +315,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="755" y="0" width="785" height="832" extended-state="0" />
+    <frame x="754" y="0" width="786" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2048894" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20427236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40114614" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18481375" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39885223" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,6 +403,13 @@
     <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/괄호검사.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/NQueen_백트래킹.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/백준/2667.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -409,13 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/NQueen_백트래킹.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/백준/2146.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -425,8 +440,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/백준/10026.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="276">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/백준/1012.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <marker date="1595426782004" expanded="true" signature="149:383" ph="..." />
+            <marker date="1595426782004" expanded="true" signature="387:404" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
