@@ -1,26 +1,22 @@
-def find(i,arr):
-    global sum
-    if i >= n:
-        return sum
-    s = []
-    v = arr[i]
-    s.append(v)
-    t,p = s.pop()
-    # print(t,p,i+t)
-    if i+t <= n:
-        sum += p
-    print
-    find(i+1, arr)
+# 14501_퇴사
+def find(k,total):
+    print('k ==>', k)
+    for i in range(k,n+1):
+        if not visited[i]:
+            visited[i] = 1
+            print("1번 i==> ", i)
+            find(k+day[i], total+pay[i])
+            print("2번 i==> ", i)
+            visited[i] = 0
+
+
 
 n = int(input())
-arr = []
-sum_list = []
+day = [0]
+pay = [0]
 for _ in range(n):
     x,y = map(int,input().split())
-    arr.append([x,y])
-for i in range(n):
-    sum = 0
-    maxV = 0
-    find(i,arr)
-    sum_list.append(sum)
-print(max(sum_list))
+    day.append(x)
+    pay.append(y)
+visited = [0]*(n+1)
+find(1,0)
