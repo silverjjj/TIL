@@ -1,4 +1,4 @@
-# 백준 2583번
+# BOJ 2583번
 # 스택
 m,n,k = map(int,input().split())
 arr= [[0]*n for _ in range(m)]
