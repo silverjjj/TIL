@@ -22,6 +22,7 @@ for m in range(M):
 # d=3 이면 y를 s만큼 더해줌 y+s를 Y로 나눠서 몫이 홀수면 d = 4, 짝수면 d=3 나머지를 y로 할당
 # d=4 이면 y를 s만큼 빼줌 y-s를 Y로 나눠서 몫이 홀수면 d= 3, 짝수면 d=4 나머지를 y로 할당
 person = 0
+res = 0
 print("=============================")
 for x, y, s, d, z in shark:
     visited[x-1][y-1] = z
@@ -43,7 +44,7 @@ while person < Y:
             tmpnum = rm[0]
     if tmpnum != 1000000:
         shark.remove(first_rm)
-    print(first_rm)
+        res += first_rm[4]
     print("상어가 잡힘")
     print(shark)
     tmp_list = []
@@ -56,7 +57,6 @@ while person < Y:
             t = -1
             while s >=1:
                 # print("d=1일때,,,,,","이동방" )
-                s -= 1
                 if (x - 1) == 0:
                     t = 1
                     if s >= 1: # 가야할곳이 더 남아있으면
@@ -65,12 +65,14 @@ while person < Y:
                     t = -1
                     if s >= 1:
                         d = 1
+                s -= 1
                 x += t
 
         elif d == 2:
             t = 1
             while s >= 1:
-                s -= 1
+                print("x,y,방향,d ==> ",x,y,s,d)
+
                 if (x - 1) == 0:
                     t = 1
                     if s >= 1:
@@ -79,13 +81,15 @@ while person < Y:
                     t = -1
                     if s >= 1:
                         d = 1
+                s -= 1
                 print("d ==>", d)
                 x += t
-
+            print("==")
+            print("x,y,방향,d ==> ", x, y, s, d)
         elif d == 3:
             t = 1
             while s >= 1:
-                s -= 1
+
                 if (y - 1) == 0:
                     t = 1
                     if s >= 1:
@@ -94,13 +98,14 @@ while person < Y:
                     t = -1
                     if s >= 1:
                         d = 4
+                s -= 1
                 y += t
 
         elif d == 4:
             # x, y, s, d, z
             t = -1
             while s >= 1:
-                s -= 1
+
                 if (y-1) == 0:
                     t = 1
                     if s >= 1:
@@ -109,6 +114,7 @@ while person < Y:
                     t = -1
                     if s >= 1:
                         d = 4
+                s -= 1
                 y += t
                 # print("y ==>", y)
         print(shark[i])
@@ -144,11 +150,11 @@ while person < Y:
                 if l == row[-1]:
                     shark.remove(row)
 
-    visited = [[0] * Y for _ in range(X)]
-    for x, y, s, d, z in shark:
-        if visited[x - 1][y - 1]:
-            visited[x - 1][y - 1] +=z
-
-    for row in visited:
-        print(row)
+    # visited = [[0] * Y for _ in range(X)]
+    # for x, y, s, d, z in shark:
+    #     visited[x - 1][y - 1] += z
+    #
+    # for row in visited:
+    #     print(row)
 # print(shark)
+print(res)
