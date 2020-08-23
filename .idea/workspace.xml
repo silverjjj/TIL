@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9939f0a9-3091-45fb-a78e-c30c59d1eecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/Trie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/17143.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/17143.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BOJ/17143tmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/17143tmp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/class.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/Trie.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Trie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/class.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,38 +17,38 @@
     <session id="1804736140">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="37" />
+          <entry key="project.closed" value="39" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="12" />
-          <entry key="project.open.time.4" value="14" />
+          <entry key="project.open.time.3" value="13" />
+          <entry key="project.open.time.4" value="15" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="39" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="72" />
+          <entry key="py" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="72" />
+          <entry key="Python" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="35" />
-          <entry key="py" value="38394" />
+          <entry key="dummy" value="39" />
+          <entry key="py" value="39710" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="35" />
-          <entry key="Python" value="38394" />
+          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="Python" value="39710" />
         </counts>
       </usages-collector>
     </session>
@@ -57,48 +56,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BOJ/17143.py">
+        <entry file="file://$PROJECT_DIR$/BOJ/14425.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="52" column="77" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BOJ/17143tmp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/Trie.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <marker date="1597996702517" expanded="true" signature="32:37" ph="..." />
-              </folding>
+            <state relative-caret-position="1127">
+              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithm/DP.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/algorithm/class.py">
+        <entry file="file://$PROJECT_DIR$/algorithm/Trie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+            <state relative-caret-position="207">
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <marker date="1598019114801" expanded="true" signature="36:218" ph="..." />
-                <marker date="1598019114801" expanded="true" signature="726:735" ph="..." />
+                <marker date="1598184090054" expanded="true" signature="36:219" ph="..." />
+                <marker date="1598184090054" expanded="true" signature="849:858" ph="..." />
               </folding>
             </state>
           </provider>
@@ -167,13 +149,16 @@
         <option value="$PROJECT_DIR$/BOJ/16236.py" />
         <option value="$PROJECT_DIR$/BOJ/17143.PY.py" />
         <option value="$PROJECT_DIR$/BOJ/17143.py" />
-        <option value="$PROJECT_DIR$/BOJ/17143tmp.py" />
-        <option value="$PROJECT_DIR$/algorithm/Trie.py" />
         <option value="$PROJECT_DIR$/algorithm/class.py" />
+        <option value="$PROJECT_DIR$/BOJ/17143tmp.py" />
+        <option value="$PROJECT_DIR$/BOJ/14425.pu.py" />
+        <option value="$PROJECT_DIR$/BOJ/14425.py" />
+        <option value="$PROJECT_DIR$/algorithm/Trie2.py" />
+        <option value="$PROJECT_DIR$/algorithm/Trie.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="855" />
     <option name="y" value="5" />
     <option name="width" value="1075" />
@@ -185,6 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,11 +183,16 @@
               <item name="algo" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algo" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="LinkedList" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,8 +212,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.class">
-    <configuration name="17143" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Trie2">
+    <configuration name="14425" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -234,28 +225,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/17143.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="17143tmp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="algo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BOJ" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/17143tmp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/14425.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -277,6 +247,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/Trie.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Trie2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/Trie2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,7 +309,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/class.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\multicampus\PycharmProjects\algo\algorithm\Trie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -328,19 +319,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.17143" />
-      <item itemvalue="Python.17143tmp" />
       <item itemvalue="Python.완전이진트리_배열" />
       <item itemvalue="Python.Trie" />
       <item itemvalue="Python.class" />
+      <item itemvalue="Python.Trie2" />
+      <item itemvalue="Python.14425" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Trie2" />
+        <item itemvalue="Python.14425" />
         <item itemvalue="Python.class" />
         <item itemvalue="Python.Trie" />
         <item itemvalue="Python.완전이진트리_배열" />
-        <item itemvalue="Python.17143tmp" />
-        <item itemvalue="Python.17143" />
       </list>
     </recent_temporary>
   </component>
@@ -358,14 +349,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="684" y="4" width="860" height="832" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.44228432" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08658295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3667622" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30945557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27936962" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -383,19 +374,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BOJ/14888.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/1260.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/17136.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/BOJ/17471.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1518" />
@@ -614,17 +592,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/17143tmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1694340269/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4429">
+          <caret line="804" column="11" lean-forward="true" selection-start-line="804" selection-start-column="11" selection-end-line="804" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/Trie2.py" />
     <entry file="file://$PROJECT_DIR$/BOJ/17143.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1196">
           <caret line="52" column="77" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/17143tmp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -635,26 +621,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/Trie.py">
+    <entry file="file://$PROJECT_DIR$/BOJ/14425.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding>
-            <marker date="1597996702517" expanded="true" signature="32:37" ph="..." />
-          </folding>
+        <state relative-caret-position="1127">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/DP.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+        <state relative-caret-position="184">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/Trie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
-            <marker date="1598019114801" expanded="true" signature="36:218" ph="..." />
-            <marker date="1598019114801" expanded="true" signature="726:735" ph="..." />
+            <marker date="1598184090054" expanded="true" signature="36:219" ph="..." />
+            <marker date="1598184090054" expanded="true" signature="849:858" ph="..." />
           </folding>
         </state>
       </provider>
