@@ -25,6 +25,9 @@ for i in range(E):
     s,e,c = map(int,input().split())
     adj[s].append([e,c])
     adj[e].append([s,c])
+print('###################################')
+print('인접 딕셔너리 생성!!!!!!!')
+print('###################################')
 print(adj)
 ###########초기 설정###############
 # key : 가중치값을 기록
@@ -42,25 +45,21 @@ num = [0]*(V+1)
 
 # 우선순위 큐 => 이진합 => heapq 라이브러리 사용=>
 # 우선순위 : 0, 데이터 0을 push
-
 heapq.heappush(pq,(0,0))
 result = 0
+
 while pq:
-    print("----------------------------------------------------------")
+    print('=================================================')
     # k : 가중치값, node : 정점을 pop
-    print(pq)
     # heapq가 pop할땐 k가 가장 작은 값이 출력됨.
     k, node = heapq.heappop(pq)
-    print(k,node)
-    print(pq)
-
+    print("현재 노드 ==>", node, '가중치 ==>',k)
     # 해댱 idx의 mst값이 True면 진행 xx
     if mst[node]:   # mst가 true일경우 continue
+        print('현재 노드인', node,'는 이미 mst를 완료했습니다.')
         continue    # mst의 true 의미 : 이미 이자리엔 최소가중치를 했다.
-
     mst[node] = True
-    result +=k
-
+    result += k
     # key 갱신 => key배열/큐
     # 해당 노드의 인접한 노드와 가중치를 불러온다
     for end, w in adj[node]:   # end : 도착점, w: 가중치
@@ -72,8 +71,8 @@ while pq:
             # 큐 갱신 => 새로운 (key,정점) 삽입 => 필요없는 원소는 스킵
             heapq.heappush(pq,(key[end], end))
             print(pq,node)
-print(key)
-print(num)
+print("최소 가중치",key)
+print("이전의 위치",num)
 print(mst)
 print(result)
 
