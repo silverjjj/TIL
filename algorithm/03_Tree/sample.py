@@ -21,13 +21,14 @@ for i in range(0,len(arr),2):
     else:
         L[parent] = child
     P[child] = parent
-
-def inorder(v):  #방문하는 노드법ㄴ호
+print(P)
+print(L)
+print(R)
+def inorder(v):  #방문하는 노드번호
     if v == 0: return
 
     # 전위 : 부모부터 시작해서 왼쪽먼저쫙~
     # print(v,end=" ")
-
     inorder(L[v])
 
     # 중위 : 왼쪽 -> 부모 -> 오른쪽
@@ -36,7 +37,7 @@ def inorder(v):  #방문하는 노드법ㄴ호
     inorder(R[v])
 
     # 후위: 왼 -> 오른 -> 부모
-    # print(v, end=" ")
+    print(v, end=" ")
 
 # 시작을 1부터한다.
 inorder(1)

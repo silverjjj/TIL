@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9939f0a9-3091-45fb-a78e-c30c59d1eecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/programmers/level3/자물쇠와열쇠.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/programmers/level3/길찾기게임.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/programmers/level4/블록이동하기.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/09_그래프/MST/10_mst_prim_pq.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/09_그래프/MST/10_mst_prim_pq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programmers/level4/지형이동.py" beforeDir="false" afterPath="$PROJECT_DIR$/programmers/level4/지형이동.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/03_Tree/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/03_Tree/sample.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,44 +17,81 @@
     <session id="1804736140">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="45" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="3" />
-          <entry key="project.open.time.3" value="17" />
-          <entry key="project.open.time.4" value="18" />
+          <entry key="project.open.time.3" value="19" />
+          <entry key="project.open.time.4" value="19" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="49" />
+          <entry key="project.opened" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="96" />
+          <entry key="py" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="96" />
+          <entry key="Python" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="39" />
-          <entry key="py" value="49613" />
+          <entry key="dummy" value="48" />
+          <entry key="py" value="54374" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="49613" />
+          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="Python" value="54374" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/programmers/level3/길찾기게임.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+              <folding>
+                <marker date="1598594485582" expanded="true" signature="183:188" ph="..." />
+                <marker date="1598594485582" expanded="true" signature="527:529" ph="..." />
+                <marker date="1598594485582" expanded="true" signature="527:569" ph="..." />
+                <marker date="1598594485582" expanded="true" signature="589:748" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/programmers/level4/블록이동하기.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1357">
+              <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+              <folding>
+                <marker date="1598619316866" expanded="true" signature="2586:2591" ph="..." />
+                <marker date="1598619316866" expanded="true" signature="2586:2676" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/programmers/level4/지형이동.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programmers/level4/가사검색.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,20 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programmers/level3/자물쇠와열쇠.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programmers/level4/지형이동.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="609">
+              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -155,11 +183,15 @@
         <option value="$PROJECT_DIR$/programmers/level3/문자열압축.py" />
         <option value="$PROJECT_DIR$/programmers/level3/외벽점검.py" />
         <option value="$PROJECT_DIR$/programmers/level3/자물쇠와열쇠.py" />
+        <option value="$PROJECT_DIR$/algorithm/03_Tree/sample.py" />
+        <option value="$PROJECT_DIR$/programmers/level4/길찾기게임.py" />
+        <option value="$PROJECT_DIR$/programmers/level4/무지의먹방라이브.py" />
+        <option value="$PROJECT_DIR$/programmers/level4/블록이동하기.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="855" />
+    <option name="x" value="392" />
     <option name="y" value="5" />
     <option name="width" value="1075" />
     <option name="height" value="1040" />
@@ -195,11 +227,6 @@
               <item name="programmers" type="462c0819:PsiDirectoryNode" />
               <item name="level4" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algo" type="462c0819:PsiDirectoryNode" />
-              <item name="SW Expert Academy" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -210,6 +237,11 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/multicampus/PycharmProjects/algo/BOJ/16236.py" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\multicampus\PycharmProjects\algo\programmers\level3" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -223,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.자물쇠와열쇠">
+  <component name="RunManager" selected="Python.지형이동">
     <configuration name="지형이동" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,7 +277,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="10_mst" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="길찾기게임" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -253,11 +285,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm/09_그래프/MST" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/programmers/level4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/09_그래프/MST/10_mst.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\multicampus\PycharmProjects\algo\programmers\level3\길찾기게임.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -266,7 +298,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="10_mst_prim_pq" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="무지의먹방라이브" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -274,11 +306,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm/09_그래프/MST" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/programmers/level4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/09_그래프/MST/10_mst_prim_pq.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\multicampus\PycharmProjects\algo\programmers\level4\블록이동하기.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="블록이동하기" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/programmers/level4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/programmers/level4/블록이동하기.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -350,7 +403,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="qwe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -358,11 +411,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/programmers/level4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm/03_Tree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/programmers/level4/qwe.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/03_Tree/sample.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -373,18 +426,12 @@
     </configuration>
     <list>
       <item itemvalue="Python.지형이동" />
-      <item itemvalue="Python.10_mst" />
-      <item itemvalue="Python.10_mst_prim_pq" />
-      <item itemvalue="Python.qwe" />
-      <item itemvalue="Python.자물쇠와열쇠" />
+      <item itemvalue="Python.sample" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.자물쇠와열쇠" />
+        <item itemvalue="Python.sample" />
         <item itemvalue="Python.지형이동" />
-        <item itemvalue="Python.qwe" />
-        <item itemvalue="Python.10_mst_prim_pq" />
-        <item itemvalue="Python.10_mst" />
       </list>
     </recent_temporary>
   </component>
@@ -402,16 +449,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="684" y="4" width="860" height="832" extended-state="0" />
-    <editor active="true" />
+    <frame x="314" y="4" width="860" height="832" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.35601458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19319563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41404012" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27936962" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15329513" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27873564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -428,38 +474,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/programmers/BFS,DFS/타겟넘버.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/BFS,DFS/네트워크.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/부분집합의합_완전탐색.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/괄호검사.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/11724.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/반복문자 지우기.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/01_Stack/부분집합의합_백트래킹.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/BFS,DFS/단어변환.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/programmers/BFS,DFS/여행경로.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -661,29 +675,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/level3/문자열압축.py">
+    <entry file="file://$PROJECT_DIR$/programmers/level3/문자열압축.py" />
+    <entry file="file://$PROJECT_DIR$/programmers/level4/qwe.py" />
+    <entry file="file://$PROJECT_DIR$/programmers/level3/외벽점검.py" />
+    <entry file="file://$PROJECT_DIR$/algorithm/07_분할정복/이은재_퀵정렬.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="161">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/level4/qwe.py">
+    <entry file="file://$PROJECT_DIR$/algorithm/03_Tree/subtree_이은재.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="345">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/level4/지형이동.py">
+    <entry file="file://$PROJECT_DIR$/algorithm/07_분할정복/이진탐색.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="92">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programmers/level3/외벽점검.py">
+    <entry file="file://$PROJECT_DIR$/algorithm/07_분할정복/이은재_이진탐색.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/07_분할정복/병합정렬.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/03_Tree/sample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/programmers/level4/가사검색.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -698,8 +729,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/programmers/level3/자물쇠와열쇠.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        <state relative-caret-position="609">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programmers/level3/길찾기게임.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <marker date="1598594485582" expanded="true" signature="183:188" ph="..." />
+            <marker date="1598594485582" expanded="true" signature="527:529" ph="..." />
+            <marker date="1598594485582" expanded="true" signature="527:569" ph="..." />
+            <marker date="1598594485582" expanded="true" signature="589:748" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programmers/level4/지형이동.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programmers/level4/블록이동하기.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1357">
+          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding>
+            <marker date="1598619316866" expanded="true" signature="2586:2591" ph="..." />
+            <marker date="1598619316866" expanded="true" signature="2586:2676" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
