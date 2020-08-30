@@ -52,6 +52,7 @@ while pq:
     print('=================================================')
     # k : 가중치값, node : 정점을 pop
     # heapq가 pop할땐 k가 가장 작은 값이 출력됨.
+    print(pq)
     k, node = heapq.heappop(pq)
     print("현재 노드 ==>", node, '가중치 ==>',k)
     # 해댱 idx의 mst값이 True면 진행 xx
@@ -70,7 +71,6 @@ while pq:
             num[end] = node
             # 큐 갱신 => 새로운 (key,정점) 삽입 => 필요없는 원소는 스킵
             heapq.heappush(pq,(key[end], end))
-            print(pq,node)
 print("최소 가중치",key)
 print("이전의 위치",num)
 print(mst)
