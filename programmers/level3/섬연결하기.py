@@ -8,6 +8,7 @@ def MST(adj,n):
     visited = [False] * n
     INF = float('inf')
     weight = [INF] * n
+    node = [0] * n
     hq = []
     heapq.heappush(hq,(0,0))     # 가중치, 위치
     res = 0
@@ -24,6 +25,7 @@ def MST(adj,n):
             if not visited[next_node] and weight[next_node] > w:
                 weight[next_node] = w
                 heapq.heappush(hq, (weight[next_node], next_node))
+    print(weight)
     return res
 def solution(n, costs):
     adj = { i : [] for i in range(n)}
