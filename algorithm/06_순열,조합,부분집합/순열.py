@@ -3,7 +3,8 @@
 def perm(k):
     if n == k:
         # print(k)
-        print(a)
+        # print(a)
+        arr.append(a[:])
         return
     else:
         for i in range(k,n):
@@ -12,11 +13,12 @@ def perm(k):
             perm(k+1)
             # print("여기",k)
             a[i], a[k] = a[k], a[i]
-
+    return arr
+arr = []
 a = [1,2,3,4,5]
 n = len(a)
-perm(0)
-
+res = perm(0)
+print(res[44])
 # # visited을 이용한 방법
 # def perm(k):
 #     global cnt
