@@ -49,7 +49,6 @@ class BinHeap:
                 self.heapList[i], self.heapList[mc] = self.heapList[mc],self.heapList[i]
             i = mc
 
-
 hp = BinHeap()
 arr = [34,27,3,50,40]
 for n in arr:
@@ -58,3 +57,18 @@ for n in arr:
 
 print(hp.delMin())
 print(hp.delMin())
+
+import heapq
+
+# heapify
+test = [1,3,2,6,8,0,6]
+heapq.heapify(test)
+print(test)
+
+# heapq : push의 순서와 상관없이 Min - priority - queue 구조를 갖는다.
+test = []
+heapq.heappush(test, 3)
+heapq.heappush(test, 5)
+heapq.heappush(test, 1)
+heapq.heappush(test, -3)
+print(test)
