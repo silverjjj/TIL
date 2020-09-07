@@ -1,11 +1,22 @@
-# 연결리스트로 구현해보자
+# data는 오름차순으로 정렬된 리스트
+def binary_search_recursion(target, start, end, data):
+    if start > end:
+        return None
+    mid = (start + end) // 2
+    print(data[start], data[mid], data[end])
+    if data[mid] == target:
+        return mid
+    elif data[mid] > target:
+        end = mid - 1
+    elif data[mid] < target:
+        start = mid+1
 
-'''
-연결리스트
-             /left/data/right/
-            (               )
-/left/data/right/       /left/data/right/
-'''
+    return binary_search_recursion(target, start, end, data)
 
-class Node:
-    def __init__(self,d,l=):
+if __name__ == '__main__':
+    li = [i*2 for i in range(11)]
+    target = 6
+    idx = binary_search_recursion(target, 0, 10, li)
+
+    print(li)
+    print(idx)
