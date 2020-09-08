@@ -18,7 +18,7 @@ def comb(n,r):
         # 3. return 되서 여기로
         comb(n-1,r)			# 마지막데이터가 없는경우
 
-arr = [0,1,2]
+arr = [0,1,2,4,5,6]
 n = len(arr)
 r = 2
 tr = [0]*r      # 결과를 담는배열
