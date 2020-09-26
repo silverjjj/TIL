@@ -1,160 +1,81 @@
 '''
-
-4 6 8
-4 1 3 3 8
-1 3 5 2 9
-2 4 8 4 1
-4 5 0 1 4
-3 3 1 2 7
-1 5 8 4 3
-3 6 2 1 2
-2 2 2 3 5
+1. 상호 번호별 정보를 담은 딕셔너리
+2. 2차원 배열에 상어 번호 할당
+3. 잡는다
+4. 이동 : 딕셔너리 한개씩 빼주면서 갱신
+4-1. 이동할때 양쪽 방향 전환할때 주의
+5. 2차원 배열에 재배치 (상어 크기 비교하면서)
 '''
+dx = [0,-1,1,0,0] # 위 아래 오른 왼
+dy = [0,0,0,1,-1]
+change = [0,2,1,4,3]
+
+def move(shark):
+    for key, val in shark.items():
+        x = val[0]
+        y = val[1]
+        s = val[2]
+        d = val[3]
+        z = val[4]
+        tmp = s
+        if d <= 2:
+            while tmp > 0:
+                tmp -= 1
+                if 1 < x < X or (x == 1 and d == 2) or (x == X and d == 1):
+                    x += dx[d]
+                elif x == 1 or x == X:
+                    d = change[d]
+                    x += dx[d]
+        else:
+            while tmp > 0:
+                tmp -= 1
+                if 1 < y < Y or (y == 1 and d == 3) or (y == Y and d == 4):
+                    y += dy[d]
+                elif y == 1 or y == Y:
+                    d = change[d]
+                    y += dy[d]
+        shark[key] = [x,y,s,d,z]
+    return shark
+
+
 X,Y,M = map(int,input().split())
-shark = []
+shark = {}
 # r,c,s,d,z
-visited = [[0]*Y for _ in range(X)]
-for m in range(M):
-    x, y, s, d, z = list(map(int,input().split()))
-    shark.append([x,y,s,d,z])
-# d=1 이면 x를 s 만큼 빼줌, x-s를 X로 나눠서 몫이 홀수면 d= 2, 짝수면 d=1 나머지를 x로 할당
-# d=2 이면 x를 s 만큼 더해줌 x+s를 X로 나눠서 몫이 홀수면 d= 1, 짝수면 d=2 나머지를 x로 할당
-# d=3 이면 y를 s만큼 더해줌 y+s를 Y로 나눠서 몫이 홀수면 d = 4, 짝수면 d=3 나머지를 y로 할당
-# d=4 이면 y를 s만큼 빼줌 y-s를 Y로 나눠서 몫이 홀수면 d= 3, 짝수면 d=4 나머지를 y로 할당
-person = 0
+visited = [[0]*(Y+1) for _ in range(X+1)]
+for i in range(1,M+1):
+    arr = list(map(int,input().split()))
+    shark[i] = arr
+for key, val in shark.items():
+    visited[val[0]][val[1]] = key
+num = 1
 res = 0
-print("=============================")
-for x, y, s, d, z in shark:
-    visited[x-1][y-1] = z
-for row in visited:
-    print(row)
-while person < Y:
-    person += 1
-    print(shark)
-    rmlist = []
-    for j in range(len(shark)):
-        print('사람번호= =>',person)
-        if shark[j][1] == person:
-            rmlist.append(shark[j])
-    tmpnum = 1000000
-    first_rm = 0
-    for rm in rmlist:
-        if rm[0] < tmpnum:
-            first_rm = rm
-            tmpnum = rm[0]
-    if tmpnum != 1000000:
-        shark.remove(first_rm)
-        res += first_rm[4]
-    print("상어가 잡힘")
-    print(shark)
-    tmp_list = []
-    for i in range(len(shark)):
-        print("상어 이동 시작!!!!!!")
-        x = shark[i][0]; y = shark[i][1]; s = shark[i][2]; d = shark[i][3]; z = shark[i][4]
-        tmp_s = s
-        print(x,y,s,d,z)
-        if d == 1:
-            t = -1
-            while s >=1:
-                # print("d=1일때,,,,,","이동방" )
-                if (x - 1) == 0:
-                    t = 1
-                    if s >= 1: # 가야할곳이 더 남아있으면
-                        d = 2
-                elif (x + 1) == X+1:
-                    t = -1
-                    if s >= 1:
-                        d = 1
-                s -= 1
-                x += t
+while num <= Y:
+    # 상어 잡는다.
+    for i in range(1,X+1):
+        if visited[i][num]:
+            rm = visited[i][num]
+            res += shark[rm][4]
+            visited[shark[rm][0]][shark[rm][1]] = 0
+            del shark[rm]
+            break
 
-        elif d == 2:
-            t = 1
-            while s >= 1:
-                print("x,y,방향,d ==> ",x,y,s,d)
-
-                if (x - 1) == 0:
-                    t = 1
-                    if s >= 1:
-                        d = 2
-                elif (x + 1) == X+1:
-                    t = -1
-                    if s >= 1:
-                        d = 1
-                s -= 1
-                print("d ==>", d)
-                x += t
-            print("==")
-            print("x,y,방향,d ==> ", x, y, s, d)
-        elif d == 3:
-            t = 1
-            while s >= 1:
-
-                if (y - 1) == 0:
-                    t = 1
-                    if s >= 1:
-                        d = 3
-                elif (y + 1) == Y+1:
-                    t = -1
-                    if s >= 1:
-                        d = 4
-                s -= 1
-                y += t
-
-        elif d == 4:
-            # x, y, s, d, z
-            t = -1
-            while s >= 1:
-
-                if (y-1) == 0:
-                    t = 1
-                    if s >= 1:
-                        d = 3
-                elif (y+1) == Y+1:
-                    t = -1
-                    if s >= 1:
-                        d = 4
-                s -= 1
-                y += t
-                # print("y ==>", y)
-        print(shark[i])
-        print([x,y,tmp_s,d,z])
-        tmp_list.append([x,y,tmp_s,d,z])
-    shark = []
-    for row in tmp_list:
-        shark.append(row[:])
-    print("이동 완료")
-    print(shark)
-    zero = [[0] * Y for _ in range(X)]
-
-    xy = []
-    for row in shark:
-        tmpx = row[0]-1
-        tmpy = row[1]-1
-        zero[tmpx][tmpy] += 1
-        if zero[tmpx][tmpy] >= 2:
-            if (tmpx, tmpy) not in tuple(xy):
-                xy.append([tmpx+1, tmpy+1])
-
-    lst = []
-    for xa, ya in xy:
-        for x, y, s, d, z in shark:
-            if xa == x and y == ya:
-                lst.append(z)
-    if len(lst) != 0:
-        ma = max(lst)
-        if ma in lst:
-            lst.remove(ma)
-        for row in shark:
-            for l in lst:
-                if l == row[-1]:
-                    shark.remove(row)
-
-    # visited = [[0] * Y for _ in range(X)]
-    # for x, y, s, d, z in shark:
-    #     visited[x - 1][y - 1] += z
-    #
-    # for row in visited:
-    #     print(row)
-# print(shark)
+    for arr in shark.values():
+        visited[arr[0]][arr[1]] = 0
+    # 상어 이동
+    shark = move(shark)
+    after_rm = []
+    for key, val in shark.items():
+        if not visited[val[0]][val[1]]:
+            visited[val[0]][val[1]] = key
+        else:
+            number = visited[val[0]][val[1]]
+            if shark[number][4] < shark[key][4]:
+                after_rm.append(number)
+                visited[val[0]][val[1]] = key
+            else:
+                after_rm.append(key)
+    if len(after_rm) > 0:
+        for l in after_rm:
+            del shark[l]
+    num += 1
 print(res)
