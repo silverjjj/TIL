@@ -1,134 +1,43 @@
-# '''
-# 13 12
-# 0 0 0 0 0 0 0 0 0 0 0 0
-# 0 0 0 0 0 0 0 0 0 0 0 0
-# 0 0 0 0 0 0 0 1 1 0 0 0
-# 0 1 1 1 0 0 0 1 1 0 0 0
-# 0 1 1 1 1 1 1 0 0 0 0 0
-# 0 1 1 1 1 1 0 1 1 0 0 0
-# 0 1 1 1 1 0 0 1 1 0 0 0
-# 0 0 1 1 0 0 0 1 1 0 0 0
-# 0 0 1 1 1 1 1 1 1 0 0 0
-# 0 0 1 1 1 1 1 1 1 0 0 0
-# 0 0 1 1 1 1 1 1 1 0 0 0
-# 0 0 1 1 1 1 1 1 1 0 0 0
-# 0 0 0 0 0 0 0 0 0 0 0 0
-# '''
-# import sys
-# sys.setrecursionlimit(100000)
-#
-# def dfs(r,c): # 현재 공기의 상태를 바꿔주는 dfs
-#     global cheese, R, C, visit
-#     visit[r][c] = 1
-#     cheese[r][c] = -1
-#     for i in range(4):
-#         nr = r + dr[i]  # 알고자하는 위치의 4면
-#         nc = c + dc[i]
-#         if 0 <= nr < R and 0 <= nc < C  and visit[nr][nc] == 0 and cheese[nr][nc] == 0:
-#             # cheese[nr][nc] = -1
-#             dfs(nr,nc)
-#
-# def change(r,c): # 공기와 접촉한 치즈를 녹이는 dfs
-#     global cheese, R, C, num_of_cheese, visit
-#     # 한 번 이라도 치즈를 녹이면 true
-#     # 못녹이면 false
-#     is_find = False
-#     visit[r][c] = 1
-#     for i in range(4):
-#         nr = r + dr[i]
-#         nc = c + dc[i]
-#         if 0 <= nr < R and 0 <= nc < C and visit[nr][nc] == 0:
-#             if cheese[nr][nc] == -1:
-#                 if change(nr,nc):
-#                     is_find = True
-#             elif cheese[nr][nc] == 1:   #치즈라면, 바꿔주고, 주변 공기 상태 확인
-#                 # num_of_cheese += 1
-#                 is_find = True
-#                 num_of_cheese += 1
-#                 cheese[nr][nc] = -1
-#                 dfs(nr, nc)
-#     return is_find
-# dr = [-1,1,0,0]
-# dc = [0,0,-1,1]
-# R,C = map(int,input().split()) # row열 , column행
-# cheese = [list(map(int,input().split())) for _ in range(R)]
-# visit = [[0]*C for _ in range(R)]
-# dfs(0,0) # 초기 외부공기 설정
-# #외부 공기 먼저 찾고, 외부 공기랑 맞닫는 면 찾기
-# cnt = 0
-# last = 0
-# for row in cheese:
-#     print(row)
-# while True:
-#     num_of_cheese = 0
-#     visit = [[0] * C for _ in range(R)]
-#     is_find = change(0,0)
-#     if is_find:
-#         cnt += 1
-#         last = num_of_cheese # 마지막전의 갯수를 찾는..
-#     else:
-#         break
-# print(cnt)
-# print(last)
-'''
-바깥 공기와 치즈 구멍을 분리 하는 작업이 있었습니다. 
--1로 만들어주고 치즈구멍을 0 으로 
-판단 하는 상황이었는데
-치즈가 녹으면 치즈 구멍이 공기가 되는
- 상황을 재현하기 위해서 dfs 실행하였습니다.
-'''
+
+import sys
+read = sys.stdin.readline
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
-def dfs(x, y):
-    global cheese, visited
-    # 치즈를 제외한 모든 부분을 2로
-    visited[x][y] = 2
-    # 치즈의 구멍: 0, 치즈: 1, 치즈가 아닌곳: 2로 만들어줌
-    cheese[x][y] = 2
-    for k in range(4):
-        nx = x + dx[k]
-        ny = y + dy[k]
-        if 0 <= nx < R and 0 <= ny < C and visited[nx][ny] == 0 and cheese[nx][ny] == 0:
-            dfs(nx,ny)
 
-# 공기와 맞닿은 치즈를 1 => 2로 바꿈
-def change(x, y):
-    global cheese, visited
-    visited[x][y] = 2 # 방문
-    for l in range(4):
-        nx = x + dx[l]
-        ny = y + dy[l]
-        if 0 <= nx < R and 0 <= ny < C and visited[nx][ny] == 0:
-            if cheese[nx][ny] == 2:
-                change(nx,ny)
-            elif cheese[nx][ny] == 1:
-                dfs(nx,ny)
-
+def bfs(x,y,cheese,visited):
+    q = [[x,y]]
+    visited[x][y] = 1
+    arr = []
+    while q:
+        x,y = q.pop(0)
+        for k in range(4):
+            nx = x + dx[k]
+            ny = y + dy[k]
+            if 0 <=nx<R+2 and 0<=ny<C+2:
+                if visited[nx][ny]:
+                    continue
+                if not cheese[nx][ny]:
+                    q.append([nx,ny])
+                    visited[nx][ny] = 1
+                elif cheese[nx][ny] == 1:
+                    arr.append([nx,ny])
+                    visited[nx][ny] = 1
+    return arr
 R, C = map(int,input().split())
-cheese = [list(map(int,input().split())) for _ in range(R)]
-visited = [[0]*C for _ in range(R)] # 공기와 접촉부분
-stan = R * C * 2
-zero = 0
-cnt = last_cheese = 0
-for row in cheese:
-    zero += sum(row)
-if zero == 0:
-    flag = False
-else:
-    flag = True
-    dfs(0,0) # 외부공기 설정
-while flag:
+cheese = [[0 for _ in range(C+2)]]
+for _ in range(R):
+    cheese.append([0]+list(map(int, read().split()))+[0])
+cheese.append([0 for _ in range(C+2)])
+cnt = 0
+while True:
+    visited = [[0] * (C+2) for _ in range(R+2)]
+    arr = bfs(0,0,cheese,visited)
+    if len(arr) == 0:
+        print(cnt)
+        print(res)
+        break
+    else:
+        res = len(arr)
     cnt += 1
-    last_cheese = 0
-    for row in cheese:
-        last_cheese += row.count(1)
-    visited = [[0] * C for _ in range(R)]
-    change(0,0)
-    result = 0
-    for row in cheese:
-        result += sum(row)
-    if stan == result:
-        flag = False
-
-print(cnt)
-print(last_cheese)
+    for i,j, in arr:
+        cheese[i][j] = 0
