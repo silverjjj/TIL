@@ -11,7 +11,7 @@ dx = [-1,1,0,0]
 dy = [0,0,1,-1]
 
 def count_move():
-    global res
+    global res, mapping
     visited = [[0] * N for _ in range(N)]
     groups = []
     for x in range(N):
@@ -22,6 +22,7 @@ def count_move():
                 q.append([x, y])
                 group = [[x, y]]
                 while q:
+                    # print(q)
                     x, y = q.popleft()
                     for k in range(4):
                         nx = x + dx[k]
@@ -31,17 +32,19 @@ def count_move():
                                 visited[nx][ny] = 1
                                 q.append([nx, ny])
                                 group.append([nx, ny])
+                # print(group)
                 if len(group) > 1:
                     groups.append(group)
-    if len(groups) > 1:
+    print(groups)
+    if len(groups) >= 1:
         res += 1
         for group in groups:
             total = 0
-            if len(group) > 1:
-                for i, j in group:
-                    total += mapping[i][j]
-                for i, j in group:
-                    mapping[i][j] = total // len(group)
+            for i, j in group:
+                total += mapping[i][j]
+            for i, j in group:
+                mapping[i][j] = total // len(group)
+        return True
     else:
         return False
 N,R,C = map(int,input().split())
@@ -55,3 +58,5 @@ while True:
     for r in mapping:
         print(r)
 print(res)
+
+
