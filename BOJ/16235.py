@@ -23,61 +23,54 @@ N,M,K = map(int,input().split())
 food_add = [list(map(int,input().split())) for _ in range(N)]
 food = [[5 for _ in range(N)] for _ in range(N)]    # 양
 tree = [[[] for _ in range(N)] for _ in range(N)]
-trees = []
+tree_position = []
 for _ in range(M):
     x, y, age = map(int, input().split())
     tree[x][y].append(age)
-    trees.append([x,y,age])
-# for row in tree:
-#     print(row)
-# print("=====================")
-# for row in food:
-#     print(row)
-# print("======================")
+    if (x, y) not in tree_position:
+        tree_position.append((x,y))
+
 # 봄 and 여름
-for _ in range(K):
-    tmp = []
-    print("여기")
-    for r in tree:
-        print(r)
-    print('저기')
-    for x,y,a in trees:
-        print("x,y,a ==>", x,y,a)
-        energy = food[x][y]         # 양분
-        tree[x][y].sort()
-        live_arr = []; death_arr = []
-        print("양분 ==>",energy)
-        print("나무 ==>",tree[x][y])
-        for i in tree[x][y]:
-            if (energy - i) >= 0:
-                energy -= i
-                tmp.append([x,y,i+1])        # 산 나무
+live_arr = []; death_arr = []; tmp=[]
+for x,y in tree_position:       # 나무의 위치
+    energy = food[x][y]         # 양분
+    live_tree = tree[x][y]       # 해당위치에 존재하는 모든 나무
+    tree[x][y] = []
+    live_tree.sort()
+    for tr in live_tree:         # 나무에 양분을 줌
+        if (energy - tr) >= 0:
+            energy -= tr
+            tree[x][y].append(tr + 1)
+            live_arr.append([x,y,tr+1])
+            if (x,y) not in tmp:
+                tmp.append((x,y))        # 산 나무
                 tree[x][y] = []
-            else:
-                death_arr.append(i//2)      # 죽은나무 => 양분
-        print("산나무",live_arr)
-        # 가을
-        if len(tmp) >= 1:
-            for x,y,age in tmp:
-                if age % 5 == 0:
-                    for k in range(8):
-                        nx = x + dx[k]; ny = y + dy[k]
-                        if 0<=nx<N and 0<=ny<N:
-                            tmp.append([nx,ny,1])
-                            tree[nx][ny] = []
+        else:
+            death_arr.append(tr//2)      # 죽은나무 => 양분
+    food[x][y] = energy
 
-        food[x][y] = energy + sum(death_arr)
-    print("tmp==>",tmp)
-    for x,y,age in tmp:
-        tree[x][y].append(age)
-    for i in range(N):
-        for j in range(N):
-            food[i][j] += food_add[i][j]
-    trees = tmp[:]
+if len(live_arr) >= 1:  # 살아있는 나무가 존재할경우
+    for x,y,age in live_arr:
+        if age % 5 == 0:
+            for k in range(8):
+                nx = x + dx[k]; ny = y + dy[k]
+                if 0<=nx<N and 0<=ny<N:
+                    tmp.append([nx,ny,1])
+                    tree[nx][ny] = []
 
-    for row in tree:
-        print(row)
-    print("=====================")
-    for row in food:
-        print(row)
-    print("=======================")
+    food[x][y] = energy + sum(death_arr)
+
+print("tmp==>",tmp)
+for x,y,age in tmp:
+    tree[x][y].append(age)
+for i in range(N):
+    for j in range(N):
+        food[i][j] += food_add[i][j]
+trees = tmp[:]
+
+for row in tree:
+    print(row)
+print("=====================")
+for row in food:
+    print(row)
+print("=======================")

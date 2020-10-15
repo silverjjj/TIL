@@ -1,73 +1,54 @@
-# # 16236 아기상어
-#
-# '''
-# 1초에 상하좌우 한칸씩 이동
-#
-#
-# 먹을게 없다 => 엄마상어한테 요청
-#
-# 4방면에
-# 물고기 1마리 => 먹자
-# 여러마리 => 가장 가까운 물고기
-#             가장 가까운 물고기가 많다면 가장 위에있는 물고기, 그것도 많으면 가장왼쪽물고기
-# 이동은 상어(크기: 2) 보다 같거나 작을때 가능하고
-# 작은것만 먹을수 있음. 자신의 크기와 같은수의 물고기를 먹으면 크기 1 증가
-# 2크기의 상어가 물고기 2마리 먹으면 크기 3으로 상승
-# '''
-#
-#
-# '''
-#
-# 4 3 2 1
-# 0 0 0 0
-# 0 0 9 0
-# 1 2 3 4
-#
-# 크기2
-# 시간3
-# 4 3 2 9
-# 0 0 0 0
-# 0 0 0 0
-# 1 2 3 4
-# 크기2
-# 시간9
-# 4 3 2 0
-# 0 0 0 0
-# 0 0 0 0
-# 9 2 3 4
-#
-# 시간10
-# 크기3
-# 4 3 2 0
-# 0 0 0 0
-# 0 0 0 0
-# 0 9 3 4
-#
-# 시간 14
-# 4 3 9 0
-# 0 0 0 0
-# 0 0 0 0
-# 0 0 3 4
-# '''
-# n = int(input())
-# maps = [list(map(int,input().split())) for _ in range(n)]
-# size = 2
-# size_plus = 0
-# for l in range(n):
-#     if 9 not in maps[l]:
-#         continue
-#     x = l
-#     y = maps[l].index(9)
-#     total = [[] for _ in range(2*n-1)]
-#     for i in range(n):
-#         for j in range(n):
-#             res = abs(x-i) + abs(y-j)
-#             total[res].append([i,j])
-#
-#     for c in range(1,2*n-1):
-#         tmp = []
-#         for i,j in total[c]:
-#             if size > maps[i][j]:
-#                 tmp.append()
-# # for row in total:
-# #     print(row)
+import sys
+from collections import deque
+input = sys.stdin.readline
+dx = [-1,1,0,0]
+dy = [0,0,1,-1]
+def BFS():
+    global cnt, shark, room, res
+    fish = []
+    visited = [[0 for _ in range(N)] for _ in range(N)]
+    sx, sy, size, distance = shark[0]
+    visited[sx][sy] = 1
+    dq = deque([])
+    dq.append([sx,sy])
+    while dq:
+        for _ in range(len(dq)):
+            x, y = dq.popleft()
+            cur = visited[x][y]
+            for k in range(4):
+                nx = x + dx[k]
+                ny = y + dy[k]
+                if 0<=nx<N and 0<=ny<N and not visited[nx][ny] and size >=room[nx][ny]:
+                    visited[nx][ny] = cur + 1
+                    dq.append([nx,ny])
+                    if 0 < room[nx][ny]<size:
+                        fish.append([nx,ny,room[nx][ny],cur + 1])
+
+        if len(fish) >= 1:
+            cnt += 1
+            fish.sort(key= lambda x:(x[3],x[0],x[1]))
+            i, j, size2, distance2 = fish.pop(0)
+            res += (distance2-1)
+            room[i][j] = 9; room[sx][sy] = 0
+            if size == cnt:
+                shark = [[i, j, size+1,0]]
+                cnt = 0
+            else:
+                shark = [[i, j, size, 0]]
+            return True
+
+    return False
+N = int(input())
+room = []
+shark = []
+for i in range(N):
+    arr = list(map(int,input().split()))
+    room.append(arr)
+    if len(shark) == 0 and 9 in arr:
+        shark.append([i, arr.index(9),2,0])
+res = 0
+cnt = 0
+while True:
+    if not BFS():
+        break
+print(res)
