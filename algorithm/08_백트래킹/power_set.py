@@ -3,6 +3,7 @@ def backtrack(selected,idx,input):
     # selected : 각 노드의 선택여부를 판단하는 배열
     # idx : 깊이
     # input : 목표개수
+    print(selected)
     candidates = [0]*2 # 선택할 수 있는 선택지는 o/x
     if idx == input:
         for i in range(input):

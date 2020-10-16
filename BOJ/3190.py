@@ -23,18 +23,12 @@ cur_direction = 1
 flag = True
 cnt = 0
 tmp = []
-# sx = sy = 0
-print("=====================")
-for r in room:
-    print(r)
 while flag:
-    print(snak)
     sx, sy = snak.pop(-1)
     cnt += 1
     nx = sx + dx[cur_direction]
     ny = sy + dy[cur_direction]
     if 0<= nx < N and 0<=ny<N and room[nx][ny] <= 1:
-        # snak.append([sx, sy])
         if room[nx][ny] == 1:   # 사과o
             snak.append([sx, sy])
             snak.append([nx, ny])
@@ -57,7 +51,4 @@ while flag:
     if cnt in direct.keys():
         num = direct[cnt]
         cur_direction = direction[cur_direction][num]
-    # print("=====================")
-    # for r in room:
-    #     print(r)
 print(cnt)
