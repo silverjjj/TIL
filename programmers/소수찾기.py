@@ -1,30 +1,31 @@
-def solution(numbers):
-    answer = 0
-    k = len(numbers)
-    print(k)
-    visit = [0]*k
-    num = [0]*k
-    total = []
-    # 우선 순열로 모든 숫자를 만들자
-    def p(n,k):
-        nonlocal num
-        if n == k:
-            sum = ""
-            for j in num:
-                sum += j
-            if sum not in total:
-                total.append(sum)
-        else:
-            for i in range(k):
-                if visit[i] == 0:
-                    num[n] = numbers[i]
-                    visit[i] = 1
-                    p(n+1,k)
-                    visit[i] = 0
-    p(0,k)
-    print(total)
-    return answer
 
+ans = 0
+arr = []
+def DFS(numbers,n,r,tr, visited):
+    global ans, arr
+    if len(tr) >= 1:
+        num = int(tr)
+        if num > 1 and num not in arr:
+            arr.append(num)
+            flag = True
+            for i in range(2,num):
+                if num % i == 0:
+                    flag = False
+                    break
+            if flag:
+                ans += 1
+    for i in range(n):
+        if not visited[i]:
+            visited[i] = 1
+            DFS(numbers, n, r+1, tr + numbers[i], visited)
+            visited[i] = 0
+
+def solution(numbers):
+    n = len(numbers)
+    tr = ""
+    visited = [0] * n
+    DFS(numbers, n, 0, tr, visited)
+    return ans
 
 numbers = "011"
-solution(numbers)
+print(solution(numbers))
