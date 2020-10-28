@@ -6,11 +6,12 @@ C가지의 문자종류가 있는데
 가능성 있는 암호를 모두 구하자
 겹침 X
 7퍼에서 틀림
+정답 출력할때 올림차순을 안했음!!
 '''
 import sys
 read = sys.stdin.readline
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-aeiou = set(['a','e','i','o','u'])
+aeiou = ['a','e','i','o','u']
 
 def combination(r,C):
     if r == 0:
@@ -22,7 +23,7 @@ def combination(r,C):
         combination(r-1,C-1)
         combination(r, C - 1)
 
-L,C = map(int,input().split())
+L,C = map(int,input().split(" "))
 chars = set(list(map(str,read().split())))
 arr = []
 for char in chars:
@@ -32,14 +33,15 @@ r = L
 res = []
 tr = [0]*L
 combination(r,C)
+res.sort()
 for nums in res:
-    char = []
-    print(nums)
+    char = ""
+    cnt,cnt2 = 0,0
     for num in nums:
-        char.append(alphabet[num])
-    char = set(char)
-    print(char)
-    a = char & aeiou
-    print(a)
-    if len(char)-len(a) >= 2 and len(a) >= 1:
-        print(''.join(char))
+        if alphabet[num] in aeiou:
+            cnt += 1    # 모음 갯수
+    if 1 <= cnt <= L-2:
+        nums.sort()
+        for num in nums:
+            char += alphabet[num]
+        print(char)

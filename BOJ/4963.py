@@ -1,29 +1,35 @@
-from collections import deque
 dx = [-1,-1,0,1,1,1,0,-1]
 dy = [0,1,1,1,0,-1,-1,-1]
 
-def dfs(x,y):
-    q = deque([x,y])
-    visited[x][y] = 1
-    while q:
-        x,y = q.popleft()
+def dfs(i,j):
+    global visited
+    stack = [[i,j]]
+    visited[i][j] = 1
+    while stack:
+        x,y = stack.pop()
         for k in range(8):
             nx = x + dx[k]
             ny = y + dy[k]
             if 0<= nx<m and 0<=ny<n and mapping[nx][ny] and not visited[nx][ny]:
-                q.append([nx,ny])
+                stack.append([nx,ny])
                 visited[nx][ny] = 1
-
-n,m = map(int,input().split())
-if n == 0 or m == 0:
-    pass
-else:
-    mapping = [list(map(int,input().split())) for _ in range(m)]
-    cnt = 0
-    visited = [[0] * n for _ in range(m)]
-    for i in range(m):
-        for j in range(n):
-            if mapping[i][j] and not visited[i][j]:
-                dfs(i,j)
+while True:
+    n,m = map(int,input().split())
+    if n == 0 and m == 0:
+        break
+    else:
+        land = []
+        mapping = []
+        for i in range(m):
+            arr = list(map(int,input().split()))
+            mapping.append(arr)
+            for j in range(n):
+                if arr[j] == 1:
+                    land.append([i,j])
+        cnt = 0
+        visited = [[0] * n for _ in range(m)]
+        for x,y in land:
+            if not visited[x][y]:
+                dfs(x,y)
                 cnt += 1
-    print(cnt)
+        print(cnt)
