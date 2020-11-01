@@ -1,20 +1,21 @@
-from collections import deque
-def BFS(n):
-    cnt = 0
-    dq = deque([1, 2, 3])
-    while dq:
-        L = len(dq)
-        for _ in range(L):
-            cur = dq.popleft()
-            for i in range(1,4):
-                if cur + i > n:
-                    continue
-                elif cur + i == n:
-                    cnt += 1
-                else:
-                    dq.append(cur + i)
-    return cnt
+def minus(num):
+    global cnt
+    if num == 0:
+        cnt += 1
+        return
+    elif num < 0:
+        return
+    elif num > 0:
+        minus(num-1)
+        minus(num-2)
+        minus(num-3)
+
 T = int(input())
+arr = []
 for _ in range(T):
     n = int(input())
-    print(BFS(n))
+    arr.append(n)
+for num in arr:
+    cnt = 0
+    minus(num)
+    print(cnt)

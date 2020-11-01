@@ -67,16 +67,6 @@ print("========================================================")
 
 
 
-
-
-
-
-
-
-
-
-
-
 # def permutations(prefix,k):
 #     if len(prefix) == r:
 #         yield prefix

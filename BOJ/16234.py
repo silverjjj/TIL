@@ -38,12 +38,12 @@ def count_move():
     print(groups)
     if len(groups) >= 1:
         res += 1
-        for group in groups:
+        for tmp in groups:
             total = 0
-            for i, j in group:
+            for i, j in tmp:
                 total += mapping[i][j]
-            for i, j in group:
-                mapping[i][j] = total // len(group)
+            for i, j in tmp:
+                mapping[i][j] = total // len(tmp)
         return True
     else:
         return False
@@ -60,3 +60,9 @@ while True:
 print(res)
 
 
+
+'''
+2 10 20
+0 30
+50 10
+'''
