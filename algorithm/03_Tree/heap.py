@@ -55,8 +55,8 @@ for n in arr:
     hp.insert(n)
     hp.printHeap()
 
-print(hp.delMin())
-print(hp.delMin())
+# print(hp.delMin())
+hp.delMin()
 
 import heapq
 
@@ -64,11 +64,10 @@ import heapq
 test = [1,3,2,6,8,0,6]
 heapq.heapify(test)
 print(test)
-
 # heapq : push의 순서와 상관없이 Min - priority - queue 구조를 갖는다.
-test = []
 heapq.heappush(test, 3)
 heapq.heappush(test, 5)
 heapq.heappush(test, 1)
 heapq.heappush(test, -3)
 print(test)
+print(heapq.heappop(test))
