@@ -13,7 +13,7 @@ class Tree:
 
     def preorderTraversal(self, node):
         print(node, end='')
-        print(type(node), type(node.left), type(node.right))
+        # print(type(node), type(node.left), type(node.right))
         if not node.left  == None : self.preorderTraversal(node.left)
         if not node.right == None : self.preorderTraversal(node.right)
 
