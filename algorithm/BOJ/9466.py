@@ -1,3 +1,7 @@
+'''
+BOJ9466
+N의 최대값은 10만 그러므로 시간복잡도는 O(N)
+'''
 import sys
 input = sys.stdin.readline
 T = int(input())
@@ -9,50 +13,22 @@ for _ in range(T):
     for i in range(1,N+1):
         if not visited[i]:
             s = [i]
-            nums = [i]
-            used = [0 for _ in range(N+1)]
-            used[i] = 1
+            st = 0
+            dist = { i:st}
             while s:
-                cur = s.pop()
-                if visited[cur]:
-                    continue
-                visited[cur] = 1
+                cur = s[-1]
                 next = arr[cur]
-                # 백트래킹
-                if used[next]:
-                    st = nums.index(next)
-                    cnt += len(nums[st:])
+                if visited[cur]:
+                    break
+                visited[cur] = 1
+                if cur == next:
+                    cnt += 1
+                    break
+                if dist.get(next) != None:
+                    idx = dist.get(next)
+                    cnt += len(s[idx:])
                     break
                 s.append(next)
-                used[next] = 1
-                nums.append(next)
+                st += 1
+                dist[next] = st
     print(N - cnt)
-'''
-
-7
-3 1 3 7 3 4 6
-
-13
-7 6 3 4 7 5 7 5 10 11 12 9 9
-
-1
-5
-2 5 4 5 2
-
-
-7
-6
-2 3 4 5 6 2
-5
-2 5 4 5 2
-6
-1 3 4 3 2 6
-13
-2 4 5 2 4 1 8 9 10 11 9 10 10
-10
-2 5 7 1 6 8 8 3 5 10
-10
-2 7 10 5 3 3 9 10 6 3
-6
-2 1 1 2 6 3
-'''
