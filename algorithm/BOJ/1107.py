@@ -31,7 +31,6 @@ if minV != 0:
     for num in removes:
         remote.remove(num)
     K = len(remote)
-    arr = []
     if M == 0:
         if minV > len(N):
             minV = len(N)
@@ -39,7 +38,31 @@ if minV != 0:
         pass
     else:
         for i in range(1,len(N)+2):
-            visited = [0] * i
+            print(i, minV)
             P = [0] * i
             perm(0,i)
 print(minV)
+'''
+
+99899
+1 99899
+2 99899
+3 99899
+4 99003
+5 90004
+6 5
+5
+
+1 99899
+2 99899
+3 99899
+4 99891
+5 98892
+6 88893
+11118
+
+
+99999
+9
+0 2 3 4 5 6 7 8 9
+'''
