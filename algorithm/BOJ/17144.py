@@ -1,61 +1,72 @@
 # 17144번 미세먼지 안녕!
 '''
-1. 청소기의 x위치를 찾는다.
-2.
+boj 17144번 미세먼지 안녕!
 '''
 import sys
 input = sys.stdin.readline
 
-dx = [0,1,0,-1]
-dy = [1,0,-1,0]
-d = ((0,1),(1,0),(0,-1),(-1,0))
-
-# def Diffusion(room):
-#     visited = [[0 for _ in range(M)] for _ in range(N)]
-#     for i in range(N):
-#         for j in range(M):
-#             if (not room[i][j] or mapping[i][j] == -1): # 미세먼지가 없거나 공기청정기
-#                 continue
-#             tmp = []
-#             cnt2 = 0
-#             for k in range(4):
-#                 nx = i + dx[k]
-#                 ny = j + dy[k]
-#                 if 0<=nx<N and 0<=ny<M and mapping[nx][ny] == 0:
-#                     tmp.append([nx,ny,room[i][j]//5])
-#                     cnt2 += 1
-#             tmp.append([i,j,(room[i][j] - (room[i][j]//5)*cnt2)])
-#             for x,y,w in tmp:
-#                 visited[x][y] += w
-#
-#     return visited[:]
-
+d = ((0,1),(-1,0),(0,-1),(1,0)) # 반시계
+d_ = ((0,1),(1,0),(0,-1),(-1,0))
 
 def Diffusion():
     dusts = {}
     for i in range(N):
         for j in range(M):
+            if dusts.get((i, j)) is None:
+                dusts[(i, j)] = 0
             if mapping[i][j] == 0:
-                dusts[str(i) + str(j)] = 0
                 continue
             elif mapping[i][j] == -1:
-                dusts[str(i) + str(j)] = -1
+                dusts[(i,j)] -= 1
                 continue
-
-            dusts[str(i)+str(j)] = mapping[i][j]
+            dusts[(i,j)] += mapping[i][j]
             next = mapping[i][j] // 5
             cnt = 0
             for dx,dy in d:
                 nx = i + dx
                 ny = j + dy
-                if 0<=nx<N and 0<=ny<M and mapping[nx][ny] > 0:
+                if 0<=nx<N and 0<=ny<M and mapping[nx][ny] >= 0:
                     cnt += 1
-                    if dusts.get(str(nx)+str(ny)) is None:
-                        dusts[str(nx)+str(ny)] = next
+                    if dusts.get((nx,ny)) is None:
+                        dusts[(nx, ny)] = next
                     else:
-                        dusts[str(nx)+str(ny)] += next
-            dusts[str(i)+str(j)] -= (next * cnt)
-    print(dusts)
+                        dusts[(nx,ny)] += next
+            dusts[(i,j)] -= (next * cnt)
+    for key, val in dusts.items():
+        mapping[key[0]][key[1]] = val
+
+def Rotate():
+    dict = {}
+    x = cleaner[0]
+    y = 0
+    mapping[x][y] = 0
+    cur = mapping[x][y]
+    for dx, dy in d:
+        while 0 <= x + dx < N and 0 <= y + dy < M:
+            x += dx
+            y += dy
+            next = mapping[x][y]
+            dict[(x, y)] = cur
+            cur = next
+
+    x = cleaner[1]
+    y = 0
+    mapping[x][y] = 0
+    cur = mapping[x][y]
+    for dx, dy in d_:
+        while 0 <= x + dx < N and 0 <= y + dy < M:
+            x += dx
+            y += dy
+            next = mapping[x][y]
+            dict[(x, y)] = cur
+            cur = next
+
+    for num in cleaner:
+        dict[(num, 0)] = -1
+
+    for key, val in dict.items():
+        mapping[key[0]][key[1]] = val
+
 N,M,T = map(int,input().split())
 mapping = []    # 집
 cleaner = []    # 청소기 위치
@@ -63,23 +74,13 @@ for i in range(N):
     arr = list(map(int,input().split()))
     if -1 in arr:
         cleaner.append(i)
+    cleaner.sort()
     mapping.append(arr)
-print(cleaner)
 
 for _ in range(T):
-    Diffusion()
+    Diffusion()         # 미세먼지 확산
+    Rotate()
+res = 2
 for r in mapping:
-    print(r)
-
-
-# while cnt <= T:
-#     cnt += 1
-#     Diffusion(room)
-#     aircon()
-#     for row in room:
-#         print(row)
-#     # print("=======================")
-#     # for row in mapping:
-#     #     print(row)
-#
-# # print(cleaner)
+    res += sum(r)
+print(res)
