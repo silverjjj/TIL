@@ -1,22 +1,20 @@
-cnt = 0
+answer = 0
 def BFS(n, money,res):
-    global cnt
-    print(n,res,cnt)
+    global answer
+    print(n,res)
     if res == n:
-        cnt += 1
+        answer += 1
+        print(res)
         return
-    if res > n:
+    elif res > n:
         return
-    for won in money:
-        print(won)
-        BFS(n, money, res + won)
-
-    return cnt
-
+    else:
+        for won in money:
+            print('won>>',won)
+            BFS(n, money, res + won)
 def solution(n, money):
-    answer = 0
-    print(BFS(n, money,0))
-
+    BFS(n, money,0)
+    print(answer)
     return answer
 n = 5
 money = [1,2,5]
